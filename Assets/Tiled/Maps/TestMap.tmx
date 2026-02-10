@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="30" height="20" tilewidth="16" tileheight="16" infinite="1" nextlayerid="2" nextobjectid="1">
+ <tileset firstgid="1" name="tielmap_all_inverted" tilewidth="16" tileheight="16" tilecount="2067" columns="39">
+  <image source="../Tilesets/tielmap_all_inverted.png" width="624" height="848"/>
+ </tileset>
+ <tileset firstgid="2068" name="tilemap_all_ship" tilewidth="16" tileheight="16" tilecount="2067" columns="39">
+  <image source="../Tilesets/tilemap_all_ship.png" width="624" height="848"/>
+  <tile id="664">
+   <objectgroup draworder="index" id="2">
+    <object id="1" x="11" y="0" width="5" height="9"/>
+   </objectgroup>
+  </tile>
+  <tile id="665">
+   <objectgroup draworder="index" id="2">
+    <object id="4" x="0" y="0" width="16" height="16"/>
+   </objectgroup>
+  </tile>
+  <tile id="666">
+   <objectgroup draworder="index" id="2">
+    <object id="1" x="0" y="0" width="16" height="16"/>
+   </objectgroup>
+  </tile>
+  <tile id="667">
+   <objectgroup draworder="index" id="2">
+    <object id="1" x="0" y="0" width="16" height="16"/>
+   </objectgroup>
+  </tile>
+  <tile id="668">
+   <objectgroup draworder="index" id="2">
+    <object id="1" x="0" y="0" width="16" height="16"/>
+   </objectgroup>
+  </tile>
+  <tile id="669">
+   <objectgroup draworder="index" id="2">
+    <object id="1" x="0" y="0" width="16" height="16"/>
+   </objectgroup>
+  </tile>
+  <tile id="670">
+   <objectgroup draworder="index" id="2">
+    <object id="1" x="0" y="0" width="16" height="16"/>
+   </objectgroup>
+  </tile>
+  <tile id="672">
+   <objectgroup draworder="index" id="2">
+    <object id="1" x="0" y="0" width="16" height="16"/>
+   </objectgroup>
+  </tile>
+  <tile id="673">
+   <objectgroup draworder="index" id="2">
+    <object id="1" x="0" y="0" width="16" height="16"/>
+   </objectgroup>
+  </tile>
+  <tile id="674">
+   <objectgroup draworder="index" id="2">
+    <object id="1" x="0" y="0" width="16" height="16"/>
+   </objectgroup>
+  </tile>
+  <tile id="676">
+   <objectgroup draworder="index" id="2">
+    <object id="1" x="0" y="0" width="16" height="16"/>
+   </objectgroup>
+  </tile>
+  <tile id="677">
+   <objectgroup draworder="index" id="2">
+    <object id="1" x="0" y="0" width="16" height="16"/>
+   </objectgroup>
+  </tile>
+  <tile id="678">
+   <objectgroup draworder="index" id="2">
+    <object id="1" x="0" y="0" width="16" height="16"/>
+   </objectgroup>
+  </tile>
+  <tile id="679">
+   <objectgroup draworder="index" id="2">
+    <object id="1" x="0" y="0" width="5" height="9"/>
+   </objectgroup>
+  </tile>
+  <tile id="685">
+   <objectgroup draworder="index" id="2">
+    <object id="1" x="11" y="0" width="5" height="9"/>
+   </objectgroup>
+  </tile>
+  <tile id="686">
+   <objectgroup draworder="index" id="2">
+    <object id="1" x="0" y="0" width="16" height="16"/>
+   </objectgroup>
+  </tile>
+  <tile id="758">
+   <objectgroup draworder="index" id="2">
+    <object id="8" x="0" y="16">
+     <polygon points="0,0 16,0 16.0078,-6 5,-16 0,-16"/>
+    </object>
+   </objectgroup>
+  </tile>
+ </tileset>
+ <tileset firstgid="4135" name="tilemap_all_bay" tilewidth="16" tileheight="16" tilecount="2067" columns="39">
+  <image source="../Tilesets/tilemap_all_bay.png" width="624" height="848"/>
+  <tile id="898">
+   <objectgroup draworder="index" id="2">
+    <object id="1" x="0" y="0" width="16" height="16"/>
+   </objectgroup>
+  </tile>
+  <tile id="899">
+   <objectgroup draworder="index" id="2">
+    <object id="1" x="0" y="16">
+     <polyline points="0,0 16,0 0,-16 0,0"/>
+    </object>
+   </objectgroup>
+  </tile>
+  <tile id="904">
+   <objectgroup draworder="index" id="2">
+    <object id="1" x="16" y="16">
+     <polyline points="0,0 0,-16 -16,0 0,0"/>
+    </object>
+   </objectgroup>
+  </tile>
+  <tile id="905">
+   <objectgroup draworder="index" id="2">
+    <object id="1" x="0" y="0" width="16" height="16"/>
+   </objectgroup>
+  </tile>
+  <tile id="938">
+   <objectgroup draworder="index" id="2">
+    <object id="1" x="0" y="0" width="16" height="16"/>
+   </objectgroup>
+  </tile>
+  <tile id="939">
+   <objectgroup draworder="index" id="2">
+    <object id="1" x="0" y="0" width="16" height="16"/>
+   </objectgroup>
+  </tile>
+  <tile id="940">
+   <objectgroup draworder="index" id="2">
+    <object id="1" x="0" y="0" width="16" height="16"/>
+   </objectgroup>
+  </tile>
+  <tile id="941">
+   <objectgroup draworder="index" id="2">
+    <object id="1" x="0" y="0" width="16" height="16"/>
+   </objectgroup>
+  </tile>
+  <tile id="942">
+   <objectgroup draworder="index" id="2">
+    <object id="1" x="0" y="0" width="16" height="16"/>
+   </objectgroup>
+  </tile>
+  <tile id="943">
+   <objectgroup draworder="index" id="2">
+    <object id="1" x="0" y="0" width="16" height="16"/>
+   </objectgroup>
+  </tile>
+ </tileset>
+ <layer id="1" name="Kachelebene 1" width="30" height="20">
+  <data encoding="csv">
+   <chunk x="-32" y="0" width="16" height="16">
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,5033,5034,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,5072,5073,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,5111,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,5150,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+</chunk>
+   <chunk x="-16" y="0" width="16" height="16">
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+5074,5077,5075,5074,5074,5074,5075,5075,5076,5074,5076,5040,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,5079,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,5079,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,5079,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,5157,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,5079,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,5118,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+</chunk>
+   <chunk x="0" y="0" width="16" height="16">
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+2732,2733,2734,2735,2736,2737,2738,2740,2741,2742,2744,2745,2746,2747,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+</chunk>
+  </data>
+ </layer>
+</map>

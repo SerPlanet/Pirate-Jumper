@@ -1,0 +1,178 @@
+{
+    "Map/SizeTest": {
+        "height": 4300,
+        "width": 2
+    },
+    "activeFile": "",
+    "expandedProjectPaths": [
+        "Maps",
+        "."
+    ],
+    "file.lastUsedOpenFilter": "Alle Dateien (*)",
+    "fileStates": {
+        "": {
+            "scaleInDock": 0.33
+        },
+        "Maps/3 Mast Ship.tmx": {
+            "scale": 1,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 560,
+                "y": 392.5
+            }
+        },
+        "Maps/3 Mast Ship.tmx#PirateShip": {
+            "scaleInDock": 2
+        },
+        "Maps/3 Mast Ship.tmx#PirateShip_inverted": {
+            "scaleInDock": 4
+        },
+        "Maps/Background.tmx": {
+            "scale": 2,
+            "selectedLayer": 1,
+            "viewCenter": {
+                "x": 240,
+                "y": 160.25
+            }
+        },
+        "Maps/Background.tmx#PirateShip": {
+            "scaleInDock": 2
+        },
+        "Maps/BigShip.tmx": {
+            "scale": 3,
+            "selectedLayer": 2,
+            "viewCenter": {
+                "x": 240,
+                "y": 160.16666666666666
+            }
+        },
+        "Maps/BigShip.tmx#ShipTielsetAll": {
+            "scaleInDock": 1.5
+        },
+        "Maps/BigShip.tmx#ShipTilesetInverted": {
+            "scaleInDock": 4
+        },
+        "Maps/Hole Map.tmx": {
+            "scale": 1,
+            "selectedLayer": 3,
+            "viewCenter": {
+                "x": -683,
+                "y": -256.5
+            }
+        },
+        "Maps/Hole Map.tmx#3 Mast Ship_Invert": {
+            "scaleInDock": 1
+        },
+        "Maps/Hole Map.tmx#3Mast Ship": {
+            "scaleInDock": 0.5
+        },
+        "Maps/Hole Map.tmx#Background": {
+            "scaleInDock": 2
+        },
+        "Maps/Hole Map.tmx#BigShip": {
+            "scaleInDock": 1
+        },
+        "Maps/Hole Map.tmx#BigShip_Invert": {
+            "scaleInDock": 1
+        },
+        "Maps/Hole Map.tmx#PirateShipAll": {
+            "scaleInDock": 1.5
+        },
+        "Maps/Hole Map.tmx#ShipSmall": {
+            "scaleInDock": 1
+        },
+        "Maps/Hole Map.tmx#ShipSmall_Invert": {
+            "scaleInDock": 1
+        },
+        "Maps/Hole Map.tmx#Water": {
+            "scaleInDock": 1
+        },
+        "Maps/Hole Map.tmx#pirate": {
+            "scaleInDock": 3
+        },
+        "Maps/Hole Map.tmx#tilemap_all": {
+            "scaleInDock": 2
+        },
+        "Maps/Map Ideen.tmx": {
+            "scale": 0.5,
+            "selectedLayer": 1,
+            "viewCenter": {
+                "x": 990,
+                "y": 292
+            }
+        },
+        "Maps/Map Ideen.tmx#tilemap_all": {
+            "scaleInDock": 1.5
+        },
+        "Maps/PirateMap.tmx": {
+            "scale": 1,
+            "selectedLayer": 1,
+            "viewCenter": {
+                "x": 659,
+                "y": 514
+            }
+        },
+        "Maps/PirateMap.tmx#PirateShip inverted": {
+            "scaleInDock": 0.33
+        },
+        "Maps/PirateMap.tmx#PirateShips": {
+            "scaleInDock": 0.5
+        },
+        "Maps/ShipSmall.tmx": {
+            "scale": 3,
+            "selectedLayer": 3,
+            "viewCenter": {
+                "x": 193.66666666666663,
+                "y": 152.83333333333331
+            }
+        },
+        "Maps/ShipSmall.tmx#Pirate Ship_all": {
+            "scaleInDock": 0.75
+        },
+        "Maps/ShipSmall.tmx#PirateMap": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "Maps/ShipSmall.tmx#PirateShip_All_Invert": {
+            "scaleInDock": 4
+        },
+        "Maps/ShipSmall.tmx#PirateShip_all": {
+            "scaleInDock": 1
+        },
+        "Maps/TestMap.tmx": {
+            "scale": 1,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "Maps/TestMap.tmx#tielmap_all_inverted": {
+            "scaleInDock": 1
+        },
+        "Maps/TestMap.tmx#tilemap_all_bay": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "Maps/TestMap.tmx#tilemap_all_ship": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "Maps/Water.tmx": {
+            "scale": 2,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 240,
+                "y": 87.75
+            }
+        },
+        "Maps/Water.tmx#PirateShip": {
+            "scaleInDock": 1.5
+        }
+    },
+    "last.imagePath": "D:/2025UnityProject/Pirate-Jumper/Assets/Tiled/Tilesets",
+    "map.fixedSize": false,
+    "map.lastUsedFormat": "tmx",
+    "map.tileHeight": 16,
+    "map.tileWidth": 16,
+    "openF
