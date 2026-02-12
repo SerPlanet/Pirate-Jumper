@@ -3,7 +3,7 @@
         "height": 4300,
         "width": 2
     },
-    "activeFile": "",
+    "activeFile": "Maps/TestMap.tmx",
     "expandedProjectPaths": [
         "Maps",
         "."
@@ -143,8 +143,8 @@
             "scale": 1,
             "selectedLayer": 0,
             "viewCenter": {
-                "x": 0,
-                "y": 0
+                "x": 562,
+                "y": 334
             }
         },
         "Maps/TestMap.tmx#tielmap_all_inverted": {
@@ -175,4 +175,25 @@
     "map.lastUsedFormat": "tmx",
     "map.tileHeight": 16,
     "map.tileWidth": 16,
-    "openF
+    "openFiles": [
+        "Maps/TestMap.tmx"
+    ],
+    "project": "Pirate Map.tiled-project",
+    "recentFiles": [
+        "Maps/TestMap.tmx",
+        "Maps/Map Ideen.tmx",
+        "Maps/ShipSmall.tmx",
+        "Maps/BigShip.tmx",
+        "Maps/3 Mast Ship.tmx",
+        "Maps/Background.tmx",
+        "Maps/Water.tmx",
+        "Maps/Hole Map.tmx",
+        "Maps/PirateMap.tmx"
+    ],
+    "resizeMap.removeObjects": true,
+    "tileset.embedInMap": true,
+    "tileset.tileSize": {
+        "height": 16,
+        "width": 16
+    }
+}
