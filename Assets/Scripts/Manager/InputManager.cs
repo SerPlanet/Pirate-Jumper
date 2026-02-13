@@ -10,7 +10,8 @@ public class InputManager : MonoBehaviour
 
     private InputAction jump;
 
-    public event Action OnJump;
+    public event Action OnJumpPressed;
+    public event Action OnJumpReleased;
 
     private void Awake()
     {
@@ -31,16 +32,26 @@ public class InputManager : MonoBehaviour
         jump = playerControler.Player.Jump;
         jump.Enable();
 
-        jump.performed += JumpPerformed;
+        jump.started += JumpPressed;
+        jump.canceled += JumpReleased;
     }
 
-    public void JumpPerformed(InputAction.CallbackContext context)
+    public void JumpPressed(InputAction.CallbackContext context)
     {
-        OnJump?.Invoke();
+        OnJumpPressed?.Invoke();
     }
+
+    public void JumpReleased(InputAction.CallbackContext context)
+    {
+        OnJumpReleased?.Invoke();
+    }
+
 
     private void OnDisable()
     {
+       
+        jump.started -= JumpPressed;
+        jump.canceled -= JumpReleased;
         jump.Disable();
     }
 }

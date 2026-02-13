@@ -4,12 +4,15 @@ using UnityEngine;
 
 public class MovementScript : MonoBehaviour
 {
-    [SerializeField] private float jumpHight = 10f;
+    [SerializeField] private float minJumpHeight = 5f;      // Minimale Sprunghöhe
+    [SerializeField] private float maxJumpHeight = 12f;     // Maximale Sprunghöhe
+    [SerializeField] private float jumpFallOffMultiplier = 5f; // Wie schnell der Sprung abbricht
+
     private Rigidbody2D rb;
     private BoxCollider2D boxCollider;
 
     //GameMechanicVar
-    private bool jumpRequest;
+    private bool isJumpPressed = false;
     private bool isGrounded = true;
 
 
@@ -30,32 +33,40 @@ public class MovementScript : MonoBehaviour
 
     private void Start()
     {
-
-        InputManager.Instance.OnJump += Jump;
+        InputManager.Instance.OnJumpPressed += JumpPressed;
+        InputManager.Instance.OnJumpReleased += JumpReleased;
     }
 
     private void OnDisable()
     {
-        InputManager.Instance.OnJump -= Jump;
+        InputManager.Instance.OnJumpPressed -= JumpPressed;
+        InputManager.Instance.OnJumpReleased -= JumpReleased;
     }
 
     private void FixedUpdate()
     {
-        if (jumpRequest)
+        if (!isJumpPressed && rb.velocity.y > minJumpHeight)
         {
-            rb.velocity = new Vector2(rb.velocity.x, 0f);
-            rb.AddForce(Vector2.up * jumpHight, ForceMode2D.Impulse);
-            jumpRequest = false;
+            rb.velocity += Vector2.up * Physics2D.gravity.y * jumpFallOffMultiplier * Time.deltaTime;
         }
     }
 
-    private void Jump()
+    private void JumpPressed()
     {
-        if(isGrounded && !isDead)
+        if (!isDead)
         {
-            jumpRequest = true;
-            Debug.Log("Jump");
+            rb.velocity = new Vector2(rb.velocity.x, 0f);
+            rb.AddForce(Vector2.up * maxJumpHeight, ForceMode2D.Impulse);
+            isJumpPressed = true;
+            isJumping = true;
+            isGrounded = false;
+            Debug.Log("Jump Started");
         }
-       
+    }
+
+    private void JumpReleased()
+    {
+        isJumpPressed = false;
+        Debug.Log("Jump Released");
     }
 }
