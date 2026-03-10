@@ -1,0 +1,669 @@
+{
+    "Map/SizeTest": {
+        "height": 4300,
+        "width": 2
+    },
+    "activeFile": "Maps/UI/BackghroundCharachterSelect.tmx",
+    "expandedProjectPaths": [
+        "Maps",
+        "Maps/UI",
+        "."
+    ],
+    "file.lastUsedOpenFilter": "Alle Dateien (*)",
+    "fileStates": {
+        "": {
+            "scaleInDock": 0.33,
+            "scaleInEditor": 3
+        },
+        "Maps/3 Mast Ship.tmx": {
+            "scale": 1,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 560,
+                "y": 392.5
+            }
+        },
+        "Maps/3 Mast Ship.tmx#PirateShip": {
+            "scaleInDock": 2
+        },
+        "Maps/3 Mast Ship.tmx#PirateShip_inverted": {
+            "scaleInDock": 4
+        },
+        "Maps/Background Water.tmx": {
+            "scale": 1.5,
+            "selectedLayer": 1,
+            "viewCenter": {
+                "x": 640.3333333333333,
+                "y": -0.3333333333333144
+            }
+        },
+        "Maps/Background Water.tmx#tielmap_all_inverted": {
+            "scaleInDock": 3
+        },
+        "Maps/Background Water.tmx#tilemap_all_bay": {
+            "scaleInDock": 2
+        },
+        "Maps/Background Water.tmx#tilemap_all_ship": {
+            "scaleInDock": 1
+        },
+        "Maps/Background.tmx": {
+            "scale": 2,
+            "selectedLayer": 1,
+            "viewCenter": {
+                "x": 240,
+                "y": 160.25
+            }
+        },
+        "Maps/Background.tmx#PirateShip": {
+            "scaleInDock": 2
+        },
+        "Maps/BackgroundSky.tmx": {
+            "scale": 1.5,
+            "selectedLayer": 1,
+            "viewCenter": {
+                "x": 640.3333333333333,
+                "y": -0.3333333333333144
+            }
+        },
+        "Maps/BackgroundSky.tmx#tielmap_all_inverted": {
+            "scaleInDock": 5.5
+        },
+        "Maps/BackgroundSky.tmx#tilemap_all_bay": {
+            "scaleInDock": 1
+        },
+        "Maps/BackgroundSky.tmx#tilemap_all_ship": {
+            "scaleInDock": 1
+        },
+        "Maps/BigShip.tmx": {
+            "scale": 3,
+            "selectedLayer": 2,
+            "viewCenter": {
+                "x": 240,
+                "y": 160.16666666666666
+            }
+        },
+        "Maps/BigShip.tmx#ShipTielsetAll": {
+            "scaleInDock": 1.5
+        },
+        "Maps/BigShip.tmx#ShipTilesetInverted": {
+            "scaleInDock": 4
+        },
+        "Maps/BounceJump_Segment.tmx": {
+            "scale": 2,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 829.75,
+                "y": 65.75
+            }
+        },
+        "Maps/BounceJump_Segment.tmx#tielmap_all_inverted": {
+            "scaleInDock": 2
+        },
+        "Maps/BounceJump_Segment.tmx#tilemap_all_bay": {
+            "scaleInDock": 2
+        },
+        "Maps/BounceJump_Segment.tmx#tilemap_all_ship": {
+            "scaleInDock": 1
+        },
+        "Maps/GrassBoxJump.tmx": {
+            "scale": 0.99453125,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 1024.1005498821683,
+                "y": 128.20109976433616
+            }
+        },
+        "Maps/GrassBoxJump.tmx#tielmap_all_inverted": {
+            "scaleInDock": 1
+        },
+        "Maps/GrassBoxJump.tmx#tilemap_all_bay": {
+            "scaleInDock": 1
+        },
+        "Maps/GrassBoxJump.tmx#tilemap_all_ship": {
+            "scaleInDock": 1
+        },
+        "Maps/GrassBox_Jump.tmx": {
+            "scale": 0.99453125,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 927.5726630007856,
+                "y": -32.67871170463479
+            }
+        },
+        "Maps/GrassBox_Jump.tmx#tielmap_all_inverted": {
+            "scaleInDock": 1
+        },
+        "Maps/GrassBox_Jump.tmx#tilemap_all_bay": {
+            "scaleInDock": 1
+        },
+        "Maps/GrassBox_Jump.tmx#tilemap_all_ship": {
+            "scaleInDock": 1
+        },
+        "Maps/HarbourSegment.tmx": {
+            "scale": 2,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 772.25,
+                "y": -144.25
+            }
+        },
+        "Maps/HarbourSegment.tmx#tielmap_all_inverted": {
+            "scaleInDock": 8,
+            "scaleInEditor": 3
+        },
+        "Maps/HarbourSegment.tmx#tilemap_all_bay": {
+            "scaleInDock": 3,
+            "scaleInEditor": 3
+        },
+        "Maps/HarbourSegment.tmx#tilemap_all_ship": {
+            "scaleInDock": 2
+        },
+        "Maps/Harbour_Background.tmx": {
+            "scale": 0.99453125,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 1024.100549882168,
+                "y": -0.502749410840579
+            }
+        },
+        "Maps/Harbour_Background.tmx#tielmap_all_inverted": {
+            "scaleInDock": 1
+        },
+        "Maps/Harbour_Background.tmx#tilemap_all_bay": {
+            "scaleInDock": 1
+        },
+        "Maps/Harbour_Background.tmx#tilemap_all_ship": {
+            "scaleInDock": 1
+        },
+        "Maps/Harbour_Segment.tmx": {
+            "scale": 2,
+            "selectedLayer": 2,
+            "viewCenter": {
+                "x": 1024.25,
+                "y": -0.25
+            }
+        },
+        "Maps/Harbour_Segment.tmx#tielmap_all_inverted": {
+            "scaleInDock": 1
+        },
+        "Maps/Harbour_Segment.tmx#tilemap_all_bay": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "Maps/Harbour_Segment.tmx#tilemap_all_ship": {
+            "scaleInDock": 1
+        },
+        "Maps/Hole Map.tmx": {
+            "scale": 1,
+            "selectedLayer": 3,
+            "viewCenter": {
+                "x": -683,
+                "y": -256.5
+            }
+        },
+        "Maps/Hole Map.tmx#3 Mast Ship_Invert": {
+            "scaleInDock": 1
+        },
+        "Maps/Hole Map.tmx#3Mast Ship": {
+            "scaleInDock": 0.5
+        },
+        "Maps/Hole Map.tmx#Background": {
+            "scaleInDock": 2
+        },
+        "Maps/Hole Map.tmx#BigShip": {
+            "scaleInDock": 1
+        },
+        "Maps/Hole Map.tmx#BigShip_Invert": {
+            "scaleInDock": 1
+        },
+        "Maps/Hole Map.tmx#PirateShipAll": {
+            "scaleInDock": 1.5
+        },
+        "Maps/Hole Map.tmx#ShipSmall": {
+            "scaleInDock": 1
+        },
+        "Maps/Hole Map.tmx#ShipSmall_Invert": {
+            "scaleInDock": 1
+        },
+        "Maps/Hole Map.tmx#Water": {
+            "scaleInDock": 1
+        },
+        "Maps/Hole Map.tmx#pirate": {
+            "scaleInDock": 3
+        },
+        "Maps/Hole Map.tmx#tilemap_all": {
+            "scaleInDock": 2
+        },
+        "Maps/Map Ideen.tmx": {
+            "scale": 0.5,
+            "selectedLayer": 1,
+            "viewCenter": {
+                "x": 990,
+                "y": 292
+            }
+        },
+        "Maps/Map Ideen.tmx#tilemap_all": {
+            "scaleInDock": 1.5
+        },
+        "Maps/PirateBay_Background.tmx": {
+            "scale": 3,
+            "selectedLayer": 2,
+            "viewCenter": {
+                "x": 1024.1666666666665,
+                "y": -0.1666666666666572
+            }
+        },
+        "Maps/PirateBay_Background.tmx#tielmap_all_inverted": {
+            "scaleInDock": 1
+        },
+        "Maps/PirateBay_Background.tmx#tilemap_all_bay": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "Maps/PirateBay_Background.tmx#tilemap_all_ship": {
+            "scaleInDock": 1
+        },
+        "Maps/PirateBay_Segment.tmx": {
+            "scale": 2,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 1065.25,
+                "y": 37.25
+            }
+        },
+        "Maps/PirateBay_Segment.tmx#tielmap_all_inverted": {
+            "scaleInDock": 5.5
+        },
+        "Maps/PirateBay_Segment.tmx#tilemap_all_bay": {
+            "scaleInDock": 2
+        },
+        "Maps/PirateBay_Segment.tmx#tilemap_all_ship": {
+            "scaleInDock": 1
+        },
+        "Maps/PirateMap.tmx": {
+            "scale": 1,
+            "selectedLayer": 1,
+            "viewCenter": {
+                "x": 659,
+                "y": 514
+            }
+        },
+        "Maps/PirateMap.tmx#PirateShip inverted": {
+            "scaleInDock": 0.33
+        },
+        "Maps/PirateMap.tmx#PirateShips": {
+            "scaleInDock": 0.5
+        },
+        "Maps/PlatformTest.tmx": {
+            "scale": 4,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 77.125,
+                "y": -18.625
+            }
+        },
+        "Maps/PlatformTest.tmx#tilemap_all_bay": {
+            "scaleInDock": 1.5
+        },
+        "Maps/PlatformTest.tmx#tilemap_all_ship": {
+            "scaleInDock": 1
+        },
+        "Maps/Schablone.tmx": {
+            "scale": 0.99453125,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 1024.100549882168,
+                "y": 128.20109976433622
+            }
+        },
+        "Maps/Schablone.tmx#tielmap_all_inverted": {
+            "scaleInDock": 1
+        },
+        "Maps/Schablone.tmx#tilemap_all_bay": {
+            "scaleInDock": 1
+        },
+        "Maps/Schablone.tmx#tilemap_all_ship": {
+            "scaleInDock": 1
+        },
+        "Maps/SchabloneAllerMaps.tmx": {
+            "scale": 2,
+            "selectedLayer": 2,
+            "viewCenter": {
+                "x": 454.75,
+                "y": -20.25
+            }
+        },
+        "Maps/SchabloneAllerMaps.tmx#tielmap_all_inverted": {
+            "scaleInDock": 1,
+            "scaleInEditor": 4
+        },
+        "Maps/SchabloneAllerMaps.tmx#tilemap_all_bay": {
+            "scaleInDock": 2,
+            "scaleInEditor": 3
+        },
+        "Maps/SchabloneAllerMaps.tmx#tilemap_all_ship": {
+            "scaleInDock": 1.5,
+            "scaleInEditor": 2
+        },
+        "Maps/ShipSmall.tmx": {
+            "scale": 3,
+            "selectedLayer": 3,
+            "viewCenter": {
+                "x": 193.66666666666663,
+                "y": 152.83333333333331
+            }
+        },
+        "Maps/ShipSmall.tmx#Pirate Ship_all": {
+            "scaleInDock": 0.75
+        },
+        "Maps/ShipSmall.tmx#PirateMap": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "Maps/ShipSmall.tmx#PirateShip_All_Invert": {
+            "scaleInDock": 4
+        },
+        "Maps/ShipSmall.tmx#PirateShip_all": {
+            "scaleInDock": 1
+        },
+        "Maps/StartSegment.tmx": {
+            "scale": 2,
+            "selectedLayer": 3,
+            "viewCenter": {
+                "x": 1024.25,
+                "y": -128.25
+            }
+        },
+        "Maps/StartSegment.tmx#tielmap_all_inverted": {
+            "scaleInDock": 1
+        },
+        "Maps/StartSegment.tmx#tilemap_all_bay": {
+            "scaleInDock": 1
+        },
+        "Maps/StartSegment.tmx#tilemap_all_ship": {
+            "scaleInDock": 2
+        },
+        "Maps/Straight.tmx": {
+            "scale": 1.5,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 640.3333333333333,
+                "y": 127.66666666666669
+            }
+        },
+        "Maps/Straight.tmx#tielmap_all_inverted": {
+            "scaleInDock": 1
+        },
+        "Maps/Straight.tmx#tilemap_all_bay": {
+            "scaleInDock": 1
+        },
+        "Maps/Straight.tmx#tilemap_all_ship": {
+            "scaleInDock": 1
+        },
+        "Maps/StraightSegment.tmx": {
+            "scale": 1.5,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 695,
+                "y": 51.66666666666663
+            }
+        },
+        "Maps/StraightSegment.tmx#tielmap_all_inverted": {
+            "scaleInDock": 1
+        },
+        "Maps/StraightSegment.tmx#tilemap_all_bay": {
+            "scaleInDock": 2,
+            "scaleInEditor": 5.5
+        },
+        "Maps/StraightSegment.tmx#tilemap_all_ship": {
+            "scaleInDock": 1
+        },
+        "Maps/TestMap 1 - Copy.tmx": {
+            "scale": 1,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 451.5,
+                "y": 317.5
+            }
+        },
+        "Maps/TestMap 1 - Copy.tmx#tielmap_all_inverted": {
+            "scaleInDock": 1
+        },
+        "Maps/TestMap 1 - Copy.tmx#tilemap_all_bay": {
+            "scaleInDock": 1
+        },
+        "Maps/TestMap 1 - Copy.tmx#tilemap_all_ship": {
+            "scaleInDock": 1
+        },
+        "Maps/TestMap 1.tmx": {
+            "scale": 1,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 384.5,
+                "y": -0.5
+            }
+        },
+        "Maps/TestMap 1.tmx#tielmap_all_inverted": {
+            "scaleInDock": 1
+        },
+        "Maps/TestMap 1.tmx#tilemap_all_bay": {
+            "scaleInDock": 2,
+            "scaleInEditor": 3
+        },
+        "Maps/TestMap 1.tmx#tilemap_all_ship": {
+            "scaleInDock": 1
+        },
+        "Maps/TestMap 2.tmx": {
+            "scale": 1.3260416666666666,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 768.0754124116262,
+                "y": -0.37706205813043425
+            }
+        },
+        "Maps/TestMap 2.tmx#tielmap_all_inverted": {
+            "scaleInDock": 1
+        },
+        "Maps/TestMap 2.tmx#tilemap_all_bay": {
+            "scaleInDock": 1,
+            "scaleInEditor": 5.5
+        },
+        "Maps/TestMap 2.tmx#tilemap_all_ship": {
+            "scaleInDock": 1
+        },
+        "Maps/TestMap 3.tmx": {
+            "scale": 0.5,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 641,
+                "y": -1
+            }
+        },
+        "Maps/TestMap 3.tmx#tielmap_all_inverted": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "Maps/TestMap 3.tmx#tilemap_all_bay": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "Maps/TestMap 3.tmx#tilemap_all_ship": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "Maps/TestMap 4.tmx": {
+            "scale": 2.652083333333333,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 384.0377062058131,
+                "y": -0.1885310290651887
+            }
+        },
+        "Maps/TestMap 4.tmx#tielmap_all_inverted": {
+            "scaleInDock": 1
+        },
+        "Maps/TestMap 4.tmx#tilemap_all_bay": {
+            "scaleInDock": 1
+        },
+        "Maps/TestMap 4.tmx#tilemap_all_ship": {
+            "scaleInDock": 1
+        },
+        "Maps/TestMap.tmx": {
+            "scale": 0.75,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 768.6666666666667,
+                "y": -0.6666666666666288
+            }
+        },
+        "Maps/TestMap.tmx#tielmap_all_inverted": {
+            "scaleInDock": 1.5,
+            "scaleInEditor": 3
+        },
+        "Maps/TestMap.tmx#tilemap_all_bay": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "Maps/TestMap.tmx#tilemap_all_ship": {
+            "scaleInDock": 3,
+            "scaleInEditor": 1
+        },
+        "Maps/TestMiddlePoint.tmx": {
+            "scale": 5.5,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 202,
+                "y": 114.45454545454547
+            }
+        },
+        "Maps/TestMiddlePoint.tmx#tilemap_all_bay": {
+            "scaleInDock": 4
+        },
+        "Maps/TestSpawnPoint.tmx": {
+            "scale": 1,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": -0.5,
+                "y": -0.5
+            }
+        },
+        "Maps/TestSpawnPoint.tmx#tilemap_all_bay": {
+            "scaleInDock": 1
+        },
+        "Maps/TestSpawnPoint2.tmx": {
+            "scale": 1,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": -0.5,
+                "y": -0.5
+            }
+        },
+        "Maps/TestSpawnPoint2.tmx#tilemap_all_bay": {
+            "scaleInDock": 1
+        },
+        "Maps/UI/BackghroundCharachterSelect.tmx": {
+            "scale": 3.503125,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 128.02854594112398,
+                "y": -0.14272970561995635
+            }
+        },
+        "Maps/UI/BackghroundCharachterSelect.tmx#tilemap_all_bay": {
+            "scaleInDock": 1
+        },
+        "Maps/UI/BackghroundCharachterSelect.tmx#tilemap_all_ship": {
+            "scaleInDock": 1
+        },
+        "Maps/UI/Bar.tmx": {
+            "scale": 4,
+            "selectedLayer": 2,
+            "viewCenter": {
+                "x": 131.625,
+                "y": -6.125
+            }
+        },
+        "Maps/UI/Bar.tmx#tilemap_all_bay": {
+            "scaleInDock": 2
+        },
+        "Maps/UI/Bar.tmx#tilemap_all_ship": {
+            "scaleInDock": 3
+        },
+        "Maps/Water.tmx": {
+            "scale": 2,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 240,
+                "y": 87.75
+            }
+        },
+        "Maps/Water.tmx#PirateShip": {
+            "scaleInDock": 1.5
+        },
+        "Maps/WaterForeground.tmx": {
+            "scale": 1.5,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 640.3333333333333,
+                "y": -0.3333333333333144
+            }
+        },
+        "Maps/WaterForeground.tmx#tielmap_all_inverted": {
+            "scaleInDock": 4
+        },
+        "Maps/WaterForeground.tmx#tilemap_all_bay": {
+            "scaleInDock": 1
+        },
+        "Maps/WaterForeground.tmx#tilemap_all_ship": {
+            "scaleInDock": 1
+        }
+    },
+    "last.imagePath": "C:/Users/Simon/Desktop/Pirate-Jumper/Assets/Tiled/Tilesets",
+    "map.fixedSize": false,
+    "map.height": 50,
+    "map.lastUsedFormat": "tmx",
+    "map.tileHeight": 16,
+    "map.tileWidth": 16,
+    "map.width": 60,
+    "mapScene.enableWorlds": false,
+    "openFiles": [
+        "Maps/TestMap.tmx",
+        "Maps/TestMap 1.tmx",
+        "Maps/TestMap 2.tmx",
+        "Maps/TestMap 3.tmx",
+        "Maps/Background Water.tmx",
+        "Maps/BackgroundSky.tmx",
+        "Maps/Straight.tmx",
+        "Maps/WaterForeground.tmx",
+        "Maps/StartSegment.tmx",
+        "Maps/Harbour_Segment.tmx",
+        "Maps/PirateBay_Background.tmx",
+        "Maps/Harbour_Background.tmx",
+        "Maps/Schablone.tmx",
+        "Maps/BounceJump_Segment.tmx",
+        "Maps/UI/Bar.tmx",
+        "Maps/UI/BackghroundCharachterSelect.tmx"
+    ],
+    "project": "Pirate Map.tiled-project",
+    "property.type": "float",
+    "recentFiles": [
+        "Maps/TestMap.tmx",
+        "Maps/TestMap 1.tmx",
+        "Maps/TestMap 2.tmx",
+        "Maps/TestMap 3.tmx",
+        "Maps/Background Water.tmx",
+        "Maps/BackgroundSky.tmx",
+        "Maps/Straight.tmx",
+        "Maps/WaterForeground.tmx",
+        "Maps/StartSegment.tmx",
+        "Maps/Harbour_Segment.tmx",
+        "Maps/PirateBay_Background.tmx",
+        "Maps/Harbour_Background.tmx"
+    ],
+    "resizeMap.removeObjects": true,
+    "tileset.embedInMap": true,
+    "tileset.tileSize": {
+        "height": 16,
+        "width": 16
+    }
+}

@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bc5e77ae651ed84db57475ac9e76899, type: 3}
+  m_Name: Englisch
+  m_EditorClassIdentifier: 
+  charachterName: 1
+  animatorController: {fileID: 9100000, guid: 799a781f6af1b0c4f801fb7388aed8f3, type: 2}
+  rarity: 1
+  icon: {fileID: -142781463161712873, guid: 10da08d709a4505499650eab2f0804c2, type: 3}

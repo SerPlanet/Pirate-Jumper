@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6407869218483481763
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2236710276035217131}
+  - component: {fileID: 1066359030383966637}
+  m_Layer: 0
+  m_Name: UIManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2236710276035217131
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6407869218483481763}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 88, y: -1.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1066359030383966637
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6407869218483481763}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acc4888a9f1c814429fb9f3589eff45e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canvasUIObj: {fileID: 3086098423289576095, guid: 3f439be22745570478b7908706384228, type: 3}
+  pauseUIObj: {fileID: 1656137257551524342, guid: 8947a408808d44f4abc2ee3441c9626f, type: 3}
+  deathUIObj: {fileID: 4762905623155698101, guid: 07f3c002319e12b4ba806d6f67a8aafb, type: 3}
+  gameUIObj: {fileID: 9055871276815270444, guid: 466ee251e0cdcf2448354d3da2fdea24, type: 3}
+  chestOpenUIObj: {fileID: 7495013206885756481, guid: a005cd0cdd1f8ea47b26f15595a0720a, type: 3}
+  charachterSelectUIObj: {fileID: 8347201298444283079, guid: a698244400383d2448647a1bb2bd57f3, type: 3}
+  lobbyUIObj: {fileID: 2397152960981554977, guid: c58cf1a485269aa4788d4fa28286bc4d, type: 3}
+  pauseUI: {fileID: 0}
+  deathUI: {fileID: 0}
+  gameUI: {fileID: 0}
+  chestOpenUI: {fileID: 0}
+  charachterSelectUI: {fileID: 0}
+  lobbyUI: {fileID: 0}

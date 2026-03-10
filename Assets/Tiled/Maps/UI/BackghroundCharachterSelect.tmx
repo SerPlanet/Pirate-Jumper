@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="60" height="50" tilewidth="16" tileheight="16" infinite="1" nextlayerid="7" nextobjectid="1">
+ <tileset firstgid="1" name="tilemap_all_bay" tilewidth="16" tileheight="16" tilecount="2067" columns="39">
+  <image source="../../Tilesets/tilemap_all_bay.png" width="624" height="848"/>
+ </tileset>
+ <tileset firstgid="2068" name="tilemap_all_ship" tilewidth="16" tileheight="16" tilecount="2067" columns="39">
+  <image source="../../Tilesets/tilemap_all_ship.png" width="624" height="848"/>
+ </tileset>
+ <layer id="1" name="Background:Far" width="60" height="50">
+  <data encoding="csv">
+   <chunk x="0" y="-16" width="16" height="16">
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,1116,1116,1116,1116,1116,1116,1116,1116,1116,1116,1116,1116,1116,0,
+0,0,1116,1116,1116,1116,1116,1116,1116,1116,1116,1116,1116,1116,1117,0,
+0,0,1117,1117,1117,1117,1117,1117,1117,1117,1117,1117,1117,1117,1117,0,
+0,0,1117,1117,1117,1117,1117,1117,1117,1117,1117,1117,1117,1117,1117,0,
+0,0,1117,1117,1117,1117,1117,1117,1117,1117,1117,1117,1117,1117,1117,0,
+0,0,1117,1117,1117,1117,1117,1117,1117,1117,1117,1117,1117,1117,1117,0,
+0,0,1117,1117,1117,1117,1117,1117,1117,1117,1117,1117,1117,1117,1117,0
+</chunk>
+  </data>
+ </layer>
+</map>

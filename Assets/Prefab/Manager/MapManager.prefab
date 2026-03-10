@@ -1,0 +1,68 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2897469618631653502
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6879103277119438325}
+  - component: {fileID: 4815785946800950945}
+  m_Layer: 0
+  m_Name: MapManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6879103277119438325
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2897469618631653502}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 88, y: -1.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4815785946800950945
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2897469618631653502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cafd4d9a02a792142b8d488dc103d833, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startSpeed: 5
+  maxSpeed: 17
+  acceleration: 0.1
+  moveMap: 1
+  mapHolderObj: {fileID: 6715463222440864475, guid: 3a83855419200f8499123a84dfafdcf7, type: 3}
+  player: {fileID: 0}
+  mapPrefabs:
+  - {fileID: 5474317182444793544, guid: d122272a01b725647a3f645965041def, type: 3}
+  - {fileID: 5474317182444793544, guid: c0ea276babe3c7a41b7feb8651bb70c8, type: 3}
+  - {fileID: 5474317182444793544, guid: 4f6648473762cde4e80fa016b15d234d, type: 3}
+  - {fileID: 5474317182444793544, guid: 8e17fcd5c4b4c9c4aad72f2c5bda04d4, type: 3}
+  - {fileID: 5474317182444793544, guid: 8afd9e59390df36439c3eb4bc268a4a3, type: 3}
+  - {fileID: 5474317182444793544, guid: cdd9ff714d1f57e48bb00171ba2eb55a, type: 3}
+  currentActiveMapPrefabs: []
+  parallaxMultiplierWaterBackground: 0.2
+  parallaxMultiplierWaterVoreground: 0.8
+  parallaxMultiplierSky: 0.05
+  parallexMultiplierPirateBay: 0.4
+  skyBackgroundObj: {fileID: 2657400480289729454, guid: bf8f2cc8ab7ac484f848d07860b558eb, type: 3}
+  waterBackgroundObj: {fileID: 2288029555988444209, guid: 662027a1e4dedb44ea88c08cd6cb3016, type: 3}
+  waterVoregroundObj: {fileID: 5972382817893256238, guid: 05f155ad5de5c70438b4dfb3270eeb5c, type: 3}
+  piratBayBackgroundObj: {fileID: 6719478705387651235, guid: b7b77a9ea187fde4587f8de254f42b9c, type: 3}
