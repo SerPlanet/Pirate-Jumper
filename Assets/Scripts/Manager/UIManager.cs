@@ -16,7 +16,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject lobbyUIObj;
 
     [Header("UI")]
-    [SerializeField] private GameObject pauseUI;
+    [SerializeField] private PauseMenuUI pauseUI;
     [SerializeField] private DeathScreanUI deathUI;
     [SerializeField] private InGameUI gameUI;
     [SerializeField] private ChestOpenUI chestOpenUI;
@@ -55,7 +55,7 @@ public class UIManager : MonoBehaviour
         chestOpenUI = Instantiate(chestOpenUIObj,canvasUI).GetComponent<ChestOpenUI>();
         charachterSelectUI = Instantiate(charachterSelectUIObj,canvasUI).GetComponent<CharachterSelectUI>();
         gameUI = Instantiate(gameUIObj,canvasUI).GetComponent<InGameUI>();
-        pauseUI = Instantiate(pauseUIObj,canvasUI);
+        pauseUI = Instantiate(pauseUIObj,canvasUI).GetComponent<PauseMenuUI>();
         deathUI = Instantiate(deathUIObj,canvasUI).GetComponent<DeathScreanUI>();
        
     }
@@ -87,6 +87,12 @@ public class UIManager : MonoBehaviour
 
     public void HideItem(){gameUI.HideItem();}
 
+    public void SetUpPauseUI(bool musicUI, bool sfxUI)
+    {
+        pauseUI.SetSFXButton(sfxUI);
+        pauseUI.SetMusicButton(musicUI);
+    }
+
     #endregion
 
     #region DeathUI
@@ -106,12 +112,12 @@ public class UIManager : MonoBehaviour
     #region  Hide/ShowUI
     private void ShowPauseUI()
     {
-        pauseUI.SetActive(true);
+        pauseUI.ShowUI();
     }
 
     private void HidePauseUI()
     {
-        pauseUI.SetActive(false);
+        pauseUI.HideUI();
     }
 
     private void ShowDeathUI()

@@ -152,7 +152,7 @@ ScriptedImporter:
       x: 4
       y: 28
       width: 16
-      height: 15
+      height: 16
     spriteID: 7ef80a5e7e53a6847a7563539c0a3b41
     spriteBone: []
     spriteOutline: []
@@ -172,7 +172,7 @@ ScriptedImporter:
       x: 28
       y: 4
       width: 16
-      height: 13
+      height: 16
     spriteID: 4ca5d66e8414fa24f9ebb1ce9df29345
     spriteBone: []
     spriteOutline: []
@@ -212,7 +212,7 @@ ScriptedImporter:
         x: 0
         y: 0
         width: 16
-        height: 15
+        height: 16
       spriteId: 7ef80a5e7e53a6847a7563539c0a3b41
     - name: Frame_2
       frameIndex: 2
@@ -221,7 +221,7 @@ ScriptedImporter:
         x: 0
         y: 0
         width: 16
-        height: 13
+        height: 16
       spriteId: 4ca5d66e8414fa24f9ebb1ce9df29345
     linkedCells: []
     parentIndex: -1

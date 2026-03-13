@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   charachterName: 3
   animatorController: {fileID: 9100000, guid: 586424d52787b1c45b7382938d07468b, type: 2}
-  rarity: 3
+  rarity: 2
   icon: {fileID: -6486718900882178007, guid: a86c76a03ab4aaa4f996609adcc7b10d, type: 3}

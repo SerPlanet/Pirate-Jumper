@@ -6,9 +6,7 @@ using UnityEngine;
 public class MovementScript : MonoBehaviour
 {
     private static Vector2 startPos = new Vector2(-1,0.01f);
-    [SerializeField] private float minJumpHeight = 5f;      // Minimale Sprungh�he
     [SerializeField] private float maxJumpHeight = 12f;     // Maximale Sprungh�he
-    [SerializeField] private float jumpFallOffMultiplier = 5f; // Wie schnell der Sprung abbricht
     [SerializeField] private Animator animator;
 
     [SerializeField] private SpriteRenderer itemSlot;
@@ -98,7 +96,6 @@ public class MovementScript : MonoBehaviour
         }
         if (isGrounded && rb.velocity.y < 0f && checkForFalling)
         {
-            Debug.Log(rb.velocity.y);
             if(rb.velocity.y < -0.5f)
             {
                 isGrounded = false;
@@ -116,7 +113,7 @@ public class MovementScript : MonoBehaviour
         }
         if (gamerIsRunning)
         {
-            if((transform.position.x < 3 || transform.position.y < -4 )&& !isDead)
+            if((transform.position.x < 3.5f || transform.position.y < -4 )&& !isDead)
         {
                 if (!heiligenscheinActive)
                 {
@@ -168,7 +165,7 @@ public class MovementScript : MonoBehaviour
             animator.SetBool("isJumping", isJumping);
             animator.SetBool("isGrounded", isGrounded);  
         }*/
-        if (isDead || !gamerIsRunning)
+        if (isDead || !gamerIsRunning||gamePaused)
         return;
 
         jumpBufferCounter = jumpBufferTime;
@@ -262,14 +259,14 @@ public class MovementScript : MonoBehaviour
     public void AddJumpForce(float force)
     {
         rb.velocity = new Vector2(rb.velocity.x, 0f);
-            rb.AddForce(Vector2.up * force, ForceMode2D.Impulse);
-            isJumpPressed = true;
-            isJumping = true;
-            isGrounded = false;
-            checkForFalling = false;
-            AudioManager.Instance.PlayPlayerAudi(jumpingAudioClip,1,1.1f);
-            animator.SetBool("isJumping", isJumping);
-            animator.SetBool("isGrounded", isGrounded);  
+        rb.AddForce(Vector2.up * force, ForceMode2D.Impulse);
+        isJumpPressed = true;
+        //isJumping = true;
+        isGrounded = false;
+        checkForFalling = false;
+        AudioManager.Instance.PlayPlayerAudi(jumpingAudioClip,1,1.1f);
+        animator.SetBool("isJumping", isJumping);
+        animator.SetBool("isGrounded", isGrounded);  
     }
 
     public void OnJumpSquash()
@@ -462,6 +459,7 @@ public class MovementScript : MonoBehaviour
     #region GameStates
     private void PausePlayerAtSpot()
     {
+        gamerIsRunning = false;
         gamePaused = true;
         savedVelocity = rb.velocity;   // aktuelle Bewegung merken
         rb.velocity = Vector2.zero;    // stoppen
@@ -471,10 +469,11 @@ public class MovementScript : MonoBehaviour
     }
     private void UnPausePlayer()
     {
+        gamerIsRunning = true;
         gamePaused = false;
         rb.simulated = true;           // Physics wieder aktivieren
         rb.velocity = savedVelocity;   // alte Bewegung wiederherstellen
-
+        
         animator.speed = 1f; 
     }
 
@@ -490,6 +489,7 @@ public class MovementScript : MonoBehaviour
     private void PlayerDies()
     {
         CameraManager.Instance.Shake(0.3f,0.2f);
+        isJumpPressed = false;
         isDead = true;
         isJumping=false;
         AudioManager.Instance.PlayPlayerAudi(dieingAudio,1,1);
@@ -502,6 +502,10 @@ public class MovementScript : MonoBehaviour
         if (heiligenscheinActive)
         {
             RevivePlayer();
+        }
+        else
+        {
+             DeaktivateItem();
         }
     }
     private void GameStateChanged(GameStates gameState)

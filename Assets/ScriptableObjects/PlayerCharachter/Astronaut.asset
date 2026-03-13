@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Astronaut
   m_EditorClassIdentifier: 
   charachterName: 2
-  animatorController: {fileID: 0}
+  animatorController: {fileID: 9100000, guid: 7c954a900e079d240972b010afa0a245, type: 2}
   rarity: 3
-  icon: {fileID: 0}
+  icon: {fileID: -6486718900882178007, guid: 61a511a76980dbf4ca7a2e3afd14d7f5, type: 3}

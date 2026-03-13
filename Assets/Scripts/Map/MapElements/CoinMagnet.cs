@@ -19,9 +19,15 @@ public class CoinMagnet : MonoBehaviour
         checkForMagnet(isMagnetAktiv);
     }
 
+    private void OnDestroy()
+    {
+        GameManager.MagnetIsActive -= checkForMagnet;
+    }
     private void OnDisable()
     {
-         GameManager.MagnetIsActive -= checkForMagnet;
+        magnetIsUsed = false;
+        checkForMagnet(isMagnetAktiv);
+        GameManager.MagnetIsActive -= checkForMagnet;
     }
 
     private void checkForMagnet(bool obj)

@@ -129,8 +129,8 @@ MonoBehaviour:
   itemSlot: {fileID: 6941486911195110245}
   jumpingAudioClip: {fileID: 8300000, guid: 72c42b1bb5eaaf94195a56bda422b9de, type: 3}
   dieingAudio: {fileID: 8300000, guid: a6bfa306483710841ae0889394892790, type: 3}
-  jumpBufferTime: 0.2
-  fallMultiplier: 1.5
+  jumpBufferTime: 1
+  fallMultiplier: 0.5
   lowJumpMultiplier: 3
   squashDuration: 0.1
   jumpSquashScale: {x: 1.1, y: 0.85}

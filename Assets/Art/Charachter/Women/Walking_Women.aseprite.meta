@@ -164,14 +164,14 @@ ScriptedImporter:
     uvTransform: {x: 27, y: 4}
   - name: Frame_2
     originalName: 
-    pivot: {x: 0.5714286, y: 0}
+    pivot: {x: 0.53333336, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
       y: 28
-      width: 14
+      width: 15
       height: 16
     spriteID: c0fedd594b955e44e85f027913d1d0e3
     spriteBone: []
@@ -184,14 +184,14 @@ ScriptedImporter:
     uvTransform: {x: 4, y: 28}
   - name: Frame_3
     originalName: 
-    pivot: {x: 0.61538464, y: 0}
+    pivot: {x: 0.5714286, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 27
       y: 27
-      width: 13
+      width: 14
       height: 15
     spriteID: d6eb35e74afc8074986d0890f7e6ec8d
     spriteBone: []
@@ -240,7 +240,7 @@ ScriptedImporter:
       cellRect:
         x: 0
         y: 0
-        width: 14
+        width: 15
         height: 16
       spriteId: c0fedd594b955e44e85f027913d1d0e3
     - name: Frame_3
@@ -249,7 +249,7 @@ ScriptedImporter:
       cellRect:
         x: 0
         y: 0
-        width: 13
+        width: 14
         height: 15
       spriteId: d6eb35e74afc8074986d0890f7e6ec8d
     linkedCells: []

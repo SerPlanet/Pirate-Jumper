@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.EventSystems;
 
 public class InputManager : MonoBehaviour
 {
@@ -15,14 +16,12 @@ public class InputManager : MonoBehaviour
 
     private void Awake()
     {
-        if(Instance == null)
-        {
-            Instance = this;
-        }
-        else
+        if (Instance != null && Instance != this)
         {
             Destroy(gameObject);
+            return;
         }
+        Instance = this;
 
         playerControler = new PlayerControler();
     }
@@ -38,7 +37,12 @@ public class InputManager : MonoBehaviour
 
     public void JumpPressed(InputAction.CallbackContext context)
     {
-        OnJumpPressed?.Invoke();
+        //OnJumpPressed?.Invoke();
+    }
+
+    public void JumpPressed()
+    {
+         OnJumpPressed?.Invoke();
     }
 
     public void JumpReleased(InputAction.CallbackContext context)

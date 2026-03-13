@@ -57,6 +57,9 @@ MonoBehaviour:
   - {fileID: 5474317182444793544, guid: 8e17fcd5c4b4c9c4aad72f2c5bda04d4, type: 3}
   - {fileID: 5474317182444793544, guid: 8afd9e59390df36439c3eb4bc268a4a3, type: 3}
   - {fileID: 5474317182444793544, guid: cdd9ff714d1f57e48bb00171ba2eb55a, type: 3}
+  - {fileID: 5474317182444793544, guid: 93be0d8d69da21f4e8434b727e80f22f, type: 3}
+  - {fileID: 5474317182444793544, guid: 1597884364177564bb1297c0174b1bf7, type: 3}
+  - {fileID: 5474317182444793544, guid: 774b337e538b19d40a8524ebb806df0c, type: 3}
   currentActiveMapPrefabs: []
   parallaxMultiplierWaterBackground: 0.2
   parallaxMultiplierWaterVoreground: 0.8

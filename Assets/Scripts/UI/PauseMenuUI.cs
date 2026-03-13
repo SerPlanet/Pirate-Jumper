@@ -7,9 +7,14 @@ public class PauseMenuUI : MonoBehaviour
     [Header ("Sounds")]
     [SerializeField] private AudioClip buttonSound;
 
+    [SerializeField] private Animator sfxButtonAnimator;
+    [SerializeField] private Animator musicButtonAnimator;
+
      public void PlayButtonSound()
     {
         AudioManager.Instance.PlayUIAudi(buttonSound,0.9f,1);
+        (bool sfx, bool music) var = AudioManager.Instance.GetSoundOptions();
+        SetUpSound(var.sfx, var.music);
     }
 
     public void HideUI()
@@ -19,7 +24,15 @@ public class PauseMenuUI : MonoBehaviour
 
     public void ShowUI()
     {
+        (bool sfx, bool music) var = AudioManager.Instance.GetSoundOptions();
+        SetUpSound(var.sfx, var.music);
         gameObject.SetActive(true);
+    }
+
+    private void SetUpSound(bool sfx, bool music)
+    {
+        SetSFXButton(sfx);
+        SetMusicButton(music);
     }
 
     public void ResumeGame()
@@ -40,18 +53,36 @@ public class PauseMenuUI : MonoBehaviour
 
     public void ToggleSFX()
     {
+        sfxButtonAnimator.SetTrigger("Pressed");
         AudioManager.Instance.ToggleSound();
     }
 
     public void ToggleMusic()
     {
+        musicButtonAnimator.SetTrigger("Pressed");
         AudioManager.Instance.ToggleMusik();
     }
 
     public void ToggleUISound()
     {
+        sfxButtonAnimator.SetTrigger("Pressed");
         AudioManager.Instance.ToggleUISound();
     }
+
+    public void SetSFXButton(bool state)
+    {
+        Debug.Log(state);
+        sfxButtonAnimator.SetBool("IsEnabled", state);
+        sfxButtonAnimator.SetTrigger("Pressed");
+    }
+
+    public void SetMusicButton(bool state)
+    {
+        Debug.Log(state);
+        musicButtonAnimator.SetBool("IsEnabled", state);
+        musicButtonAnimator.SetTrigger("Pressed");
+    }
+
 
     public void Reset()
     {

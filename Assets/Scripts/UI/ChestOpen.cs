@@ -19,6 +19,11 @@ public class ChestOpen : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     [SerializeField] private Image chestLidImage;
     [SerializeField] private Image itemImage;
 
+    [SerializeField] private SparkelEffekt sparkelEffekt;
+    [SerializeField] private SparkelEffekt sparkelEffekt2;
+
+    [SerializeField] private AudioClip openRevealSound;
+
     [Header("Settings")]
     [SerializeField] private float dropHeight = 800f;
     [SerializeField] private float pressScale = 0.9f;
@@ -40,6 +45,8 @@ public class ChestOpen : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     private void Start()
     {
         startPosItem = item.anchoredPosition;
+        sparkelEffekt.Hide();
+        sparkelEffekt2.Hide();
     }
 
     public void SetUpChest(Rarity rarity, Sprite charachterIcon)
@@ -57,6 +64,8 @@ public class ChestOpen : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         item.localScale = Vector3.zero;
         Color currentGlowCollor = glow.color;
         goBackRaycast.raycastTarget = false;
+        sparkelEffekt.Hide();
+        sparkelEffekt2.Hide();
 
         //Tween Reset
         glow.transform.DOKill();
@@ -121,9 +130,11 @@ public class ChestOpen : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         {
             PlayFlash();
             PlayGlow();
+            sparkelEffekt.StartSparkel();
+            sparkelEffekt2.StartSparkel();
             RevealItem();
         });
-        
+        AudioManager.Instance.PlayUIAudi(openRevealSound, 1f,1f);
     }
 
     Tween OpenLid()
@@ -183,6 +194,7 @@ public class ChestOpen : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
             item.DOAnchorPosY(startPos.y+270, 0.1f).SetEase(Ease.OutQuad)
         );
         goBackRaycast.raycastTarget = true;
+        
     }
 
     void PlayFlash()
@@ -202,15 +214,23 @@ public class ChestOpen : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         {
             case(Rarity.common):
             glow.color = Color.grey;
+            sparkelEffekt.SetColou(Color.grey);
+            sparkelEffekt2.SetColou(Color.grey);
             break;
             case(Rarity.rare):
             glow.color = Color.blue;
+            sparkelEffekt.SetColou(Color.blue);
+            sparkelEffekt2.SetColou(Color.blue);
             break;
             case(Rarity.epic):
             glow.color = Color.magenta;
+            sparkelEffekt.SetColou(Color.magenta);
+            sparkelEffekt2.SetColou(Color.magenta);
             break;
             case(Rarity.legendary):
             glow.color = new Color (1,0.7529413f,0.3019608f);
+            sparkelEffekt.SetColou(new Color (1,0.7529413f,0.3019608f));
+            sparkelEffekt2.SetColou(new Color (1,0.7529413f,0.3019608f));
             break;
         }
         glow.transform.localScale = Vector3.one;
@@ -235,5 +255,7 @@ public class ChestOpen : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
             .SetEase(Ease.Linear)
             .SetLoops(-1, LoopType.Restart); // endlos
     }
+
+    
 
 }

@@ -46,3 +46,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameState: 0
   playerObject: {fileID: 3347832375913853095, guid: 6526fcb00ba54ce498a6af448a091d98, type: 3}
+  moneySound: {fileID: 8300000, guid: cea4004a1b99ce041a7111cbbd34004d, type: 3}

@@ -189,6 +189,7 @@ MonoBehaviour:
   collectCoinAudiClip: {fileID: 0}
   amountWorth: 1
   animator: {fileID: 5229932580306324335}
+  coinMagnet: {fileID: 2026208571949706786}
 --- !u!58 &1448878121018354469
 CircleCollider2D:
   m_ObjectHideFlags: 0

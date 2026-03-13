@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 
@@ -14,11 +13,13 @@ public class ItemChest : MonoBehaviour
 
     [SerializeField] private GameObject kanonItem;
 
-    [SerializeField] private BoxCollider2D collider2D;
+    [SerializeField] private BoxCollider2D boxcollider2D;
 
     [SerializeField] private Light2D light2D;
 
     [SerializeField] private List<ScriptableItem> scriptableItems;
+
+    [SerializeField]private AudioClip openChest;
 
     private bool isClosed = true;
     private Vector3 startScale;
@@ -34,7 +35,7 @@ public class ItemChest : MonoBehaviour
     private ScriptableItem scriptableItem;
     private void OnEnable()
     {
-        int spawnRandom = Random.Range(1,5);//wahrscheinlichkeit das eine spawned
+        int spawnRandom = Random.Range(1,6);//wahrscheinlichkeit das eine spawned
         if(spawnRandom > 1)
         {
             Destroy(gameObject);
@@ -52,7 +53,7 @@ public class ItemChest : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         //Debug.Log("Open Chest");
-        collider2D.enabled = false;
+        boxcollider2D.enabled = false;
         GameManager.Instance.UseItem();
         VisualyOpenChest();
     }
@@ -76,6 +77,7 @@ public class ItemChest : MonoBehaviour
 
     private void VisualyOpenChest()
     {
+        AudioManager.Instance.PlayenvironmentAudi(openChest, 1f,1f);
         isClosed = false;
         animatorChest.SetTrigger("OpenChest");
     }
@@ -95,6 +97,7 @@ public class ItemChest : MonoBehaviour
 
     public void ActivateItem()
     {
+        
         chest.SetActive(false);
         switch (currentItem)
         {

@@ -48,8 +48,8 @@ public class AudioManager : MonoBehaviour
         {
             coinAudio.mute = sFXSound;
         }
+        SetUpUI();
         uISound = SaveManager.Instance.LoadUISound();
-        ToggleUISound();
         SpawnManager.Instance.AudiManagerRdy();
         
     }
@@ -66,7 +66,7 @@ public class AudioManager : MonoBehaviour
         playerAudio.Play();
     }
 
-    public void PlayenvironmentAudi(AudioClip audioClip)
+    public void PlayenvironmentAudi(AudioClip audioClip,float pitchStart, float pitchEnd)
     {
         environmentAudio.clip = audioClip;
         environmentAudio.Play();
@@ -111,6 +111,13 @@ public class AudioManager : MonoBehaviour
             coinAudio.mute = sFXSound;
         }
         SaveManager.Instance.SaveSFXSound(sFXSound);
+        SetUpUI();
+    }
+
+    private void SetUpUI()
+    {
+        Debug.Log(musikSOund + ""+sFXSound);
+        UIManager.Instance.SetUpPauseUI(musikSOund,sFXSound);
     }
     #endregion
 
@@ -142,12 +149,12 @@ public class AudioManager : MonoBehaviour
         musicAudio.clip = ambienteMusicClip[0];
         musicAudio.Play();
     }
-    private void StopInGameMusic()
+    public void StopInGameMusic()
     {
         
         musicAudio.Pause();
     }
-      private void RepeatInGameMusic()
+      public void RepeatInGameMusic()
     {
         musicAudio.UnPause();
     }
@@ -178,12 +185,16 @@ public class AudioManager : MonoBehaviour
         {
             PlayUIAudi(switchButtonOn, 1.1f,0.9f);
         }
-      
+        SetUpUI();
         SaveManager.Instance.SaveMusicSound(musikSOund);
     }
     #endregion
     //Public sounds
    
+    public (bool sfx,bool music) GetSoundOptions()
+    {
+        return(sFXSound,musikSOund);
+    }
 
 
    

@@ -4,5 +4,9 @@ https://casper-gaming.itch.io/coin-sound-pack //CoinSunds
 https://pixabay.com/sound-effects/film-special-effects-concrete-footsteps-6752/ //WalkingSOund
 https://rdbi.itch.io/16-x-16-coins //Coin
 https://thesoundrack.itch.io/pirate-music-pack //Pirate Music
+https://pixabay.com/de/sound-effects/musical-boings-jews-harp-7153/ //boingSound
+Tink divine orb by reliops123 -- https://freesound.org/s/791861/ -- License: Creative Commons 0 //ChestOpen
+https://pixabay.com/de/sound-effects/haushalt-wood-door-slam-46791/ //Option2 ChestOpen
 https://lost-soup.itch.io/woods-journey-ui-asset-pack //UI Idea
 https://pixabay.com/collections/interface-button-click-switch-22066007/ //UI Button And Pause
+https://pixabay.com/de/sound-effects/film-spezialeffekte-cannon-shot-326182/ //cannon shoot

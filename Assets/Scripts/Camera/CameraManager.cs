@@ -7,6 +7,9 @@ public class CameraManager : MonoBehaviour
 
     [SerializeField] private Transform cameraTransform;
 
+    [SerializeField] int pixelsPerUnit = 100;
+    float pixelSize;
+
     Vector3 startPos;
 
     float currentYOffset;
@@ -16,8 +19,8 @@ public class CameraManager : MonoBehaviour
     float shakeY;
 
     [Header("Jump & Land Feel")]
-    [SerializeField] float jumpUpOffset = 0.15f;   // weniger radikal beim Sprung
-    [SerializeField] float landDownOffset = -0.25f; // sanfter Aufprall
+    [SerializeField] float jumpUpOffset = 8f;   // weniger radikal beim Sprung
+    [SerializeField] float landDownOffset = -12f; // sanfter Aufprall
     [SerializeField] float smoothSpeed = 8f;
 
     [Header("Idle Bob")]
@@ -32,22 +35,22 @@ public class CameraManager : MonoBehaviour
             Destroy(gameObject);
 
         startPos = cameraTransform.localPosition;
+        pixelSize = 1f / pixelsPerUnit;
     }
 
     void LateUpdate()
     {
-         // Idle bob / kleine Auf/Ab Bewegung
-       // float idleOffset = Mathf.Sin(Time.time * idleBobSpeed) * idleBobAmount;
+        // X Bewegung in Pixeln
+        float camXOffset = Mathf.Sin(Time.time * 3f) * 3f; // 3 Pixel Bewegung
 
-        // X-Pendelbewegung
-        float camXOffset = Mathf.Sin(Time.time * 3f) * 0.03f;
-
-        // Smooth Jump / Land offset
+        // Jump/Land smoothing
         currentYOffset = Mathf.Lerp(currentYOffset, targetYOffset, smoothSpeed * Time.deltaTime);
 
-        // Endposition Kamera
-        Vector3 finalPos = startPos +
-                        new Vector3(camXOffset + shakeX, currentYOffset + shakeY, 0);
+        // Pixel in World Units umrechnen
+        float x = Mathf.Round(camXOffset) * pixelSize;
+        float y = Mathf.Round((currentYOffset + shakeY)) * pixelSize;
+
+        Vector3 finalPos = startPos + new Vector3(x + shakeX * pixelSize, y, 0);
 
         cameraTransform.localPosition = finalPos;
     }
@@ -92,8 +95,8 @@ public class CameraManager : MonoBehaviour
 
         while (timer < duration)
         {
-            shakeX = Random.Range(-1f, 1f) * strength;
-            shakeY = Random.Range(-1f, 1f) * strength;
+            shakeX = Random.Range(-2f, 2f) * strength;
+            shakeY = Random.Range(-2f, 2f) * strength;
 
             timer += Time.deltaTime;
             yield return null;

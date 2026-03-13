@@ -45,6 +45,11 @@ public class InGameUI : MonoBehaviour
         gameObject.SetActive(true);
     }
 
+    public void PerformJump()
+    {
+        InputManager.Instance.JumpPressed();
+    }
+
     public void SetUpItem(Sprite iconItem, float itemDuration)
     {
         itemImage.sprite = iconItem;

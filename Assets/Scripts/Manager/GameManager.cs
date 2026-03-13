@@ -9,6 +9,8 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private GameObject playerObject;
 
+    [SerializeField] private AudioClip moneySound;
+
     public static event Action<GameStates> OnGameStateChange;
 
     public static event Action<bool> MagnetIsActive;
@@ -38,6 +40,7 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+       
     }
 
     private void Start()
@@ -47,6 +50,13 @@ public class GameManager : MonoBehaviour
         //MapManager.Instance.GivePlayerToMap(player.transform);
         highscore = SaveManager.Instance.LoadHighscore();
         money = SaveManager.Instance.LoadMoney();
+        // Auto Rotation aktivieren
+        Screen.autorotateToPortrait = false;
+        Screen.autorotateToPortraitUpsideDown = false;
+        Screen.autorotateToLandscapeLeft = true;
+        Screen.autorotateToLandscapeRight = true;
+        Screen.orientation = ScreenOrientation.AutoRotation;
+
         OpenApp();
     }
     #region Player
@@ -68,7 +78,7 @@ public class GameManager : MonoBehaviour
         isMagnetAktiv = false;
         MagnetIsActive?.Invoke(isMagnetAktiv);
     }
-    public bool  GetIsMagnetAktiv(){return isMagnetAktiv;}
+    public bool GetIsMagnetAktiv(){return isMagnetAktiv;}
 
     #endregion
 
@@ -78,7 +88,9 @@ public class GameManager : MonoBehaviour
     {
         if(amountPerChest < money)
         {
+            AudioManager.Instance.PlayUIAudi(moneySound,1f,0.9f);
             money -= amountPerChest;
+            SaveManager.Instance.SaveMoney(money);
             return true;
         }
         else
@@ -142,6 +154,11 @@ public class GameManager : MonoBehaviour
         SaveManager.Instance.SaveMoney(money);
     }
 
+    public void AddMoneyInLobby(ulong amount)
+    {
+        money += amount;
+        SaveManager.Instance.SaveMoney(money);
+    }
     private void ResetDataForRun()
     {
         currentRunMoney = 0;
@@ -250,6 +267,29 @@ public class GameManager : MonoBehaviour
         StartGame();
     }
     #endregion
+
+    private void OnApplicationPause(bool pause)
+    {
+        if (pause)
+        {
+           if(gameState == GameStates.GameRunning)
+            {
+                PauseGame();
+            }    
+        }
+           
+    }
+    private void OnApplicationFocus(bool focus)
+    {
+        if (focus)
+        {
+           if(gameState == GameStates.GameRunning)
+            {
+                PauseGame();
+            }    
+        }
+           
+    }
 }
 
 

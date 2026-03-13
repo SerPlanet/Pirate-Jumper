@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SocialPlatforms.Impl;
+using System.Collections;
 
 public class MapManager : MonoBehaviour
 {
@@ -47,7 +47,9 @@ public class MapManager : MonoBehaviour
     private ulong currentScore;
     private float scoreChecker;
 
+     private Coroutine slowDownCoroutine;
     private bool itemInUse;
+    private int prevNr;
 
     [Header ("Paralex Privat Var")]
     private float length, movementWater, movementSki, movementWaterVoreground, speed, movementPirateBayBackground;
@@ -93,7 +95,7 @@ public class MapManager : MonoBehaviour
             }
             if (!itemInUse)
             {
-                speed = Mathf.Min(speed + acceleration * Time.deltaTime, maxSpeed);
+                speed = Mathf.Lerp(speed, maxSpeed, acceleration * Time.deltaTime);
             }
              
         }
@@ -123,6 +125,12 @@ public class MapManager : MonoBehaviour
     private void SpawnMapPart(Vector3 spawnPosition)
     {
         int randomSelection = Random.Range(0, mapPrefabs.Count);
+        //int randomSelection = Random.Range(mapPrefabs.Count-1, mapPrefabs.Count-1);
+        if(randomSelection == prevNr)
+        {
+            randomSelection = (randomSelection+1)%mapPrefabs.Count;
+        }
+        prevNr = randomSelection;
         lastMapPrefabPart = Instantiate(mapPrefabs[randomSelection].GetTransform(),spawnPosition, Quaternion.identity, mapHolder);
         mapPrefab = lastMapPrefabPart.GetComponent<MapPrefab>();
         currentActiveMapPrefabs.Add(mapPrefab);
@@ -165,44 +173,44 @@ public class MapManager : MonoBehaviour
          if(movementPirateBayBackground >= 140)
         {
            // Debug.Log("--------RESEZT-----------" + waterBackground.position +","+ movementWater);
-            piratBayBackground.position = new Vector3(52, piratBayBackground.position.y, piratBayBackground.position.x);
+            piratBayBackground.position = new Vector3(52, piratBayBackground.position.y, piratBayBackground.position.z);
             movementPirateBayBackground = 0;
         }
         else
         {
-              piratBayBackground.position = new Vector3(piratBayBackground.position.x - (speed * parallexMultiplierPirateBay)*Time.deltaTime, piratBayBackground.position.y);
+              piratBayBackground.position += Vector3.left * speed * parallexMultiplierPirateBay * Time.deltaTime;
         }
         //Debug.Log("Var"+ movementWater + "," + movementSki + "Pos" + skyBackground.position + "," + waterBackground.position);
         if(movementSki >= length)
         {
            // Debug.Log("--------RESEZT-----------" + skyBackground.position +","+ movementSki);
-           skyBackground.position = new Vector3(length, skyBackground.position.y, skyBackground.position.x);
+           skyBackground.position = new Vector3(length, skyBackground.position.y, skyBackground.position.z);
            movementSki = 0;
         }
         else
         {
-            skyBackground.position = new Vector3(skyBackground.position.x - (speed *parallaxMultiplierSky)*Time.deltaTime, skyBackground.position.y);
+            skyBackground.position += Vector3.left * speed * parallaxMultiplierSky * Time.deltaTime;
         }
         if(movementWater >= length)
         {
             //Debug.Log("--------RESEZT-----------" + waterBackground.position +","+ movementWater);
-            waterBackground.position = new Vector3(length, waterBackground.position.y, waterBackground.position.x);
+            waterBackground.position = new Vector3(length, waterBackground.position.y, waterBackground.position.z);
             movementWater = 0;
         }
         else
         {
-             waterBackground.position = new Vector3(waterBackground.position.x - (speed * parallaxMultiplierWaterBackground)*Time.deltaTime, waterBackground.position.y);
+             waterBackground.position += Vector3.left * speed * parallaxMultiplierWaterBackground * Time.deltaTime;
         }
 
         if(movementWaterVoreground >= length)
         {
            // Debug.Log("--------RESEZT-----------" + waterBackground.position +","+ movementWater);
-            waterVoreground.position = new Vector3(length, waterVoreground.position.y, waterVoreground.position.x);
+            waterVoreground.position = new Vector3(length, waterVoreground.position.y, waterVoreground.position.z);
             movementWaterVoreground = 0;
         }
         else
         {
-             waterVoreground.position = new Vector3(waterVoreground.position.x - (speed * parallaxMultiplierWaterVoreground)*Time.deltaTime, waterVoreground.position.y);
+             waterVoreground.position += Vector3.left * speed * parallaxMultiplierWaterVoreground * Time.deltaTime;
         }
         
         
@@ -227,8 +235,8 @@ public class MapManager : MonoBehaviour
         movementPirateBayBackground = 0;
         speed = startSpeed;
         skyBackground.position = new Vector3(length, skyBackground.position.y, skyBackground.position.z);
-        waterBackground.position = new Vector3(length, waterBackground.position.y, waterBackground.position.x);
-        piratBayBackground.position = new Vector3(52, piratBayBackground.position.y, piratBayBackground.position.x);
+        waterBackground.position = new Vector3(length, waterBackground.position.y, waterBackground.position.z);
+        piratBayBackground.position = new Vector3(52, piratBayBackground.position.y, piratBayBackground.position.z);
     }
 
     private void LoadNewMapSegmentsAtStart()
@@ -316,5 +324,68 @@ public class MapManager : MonoBehaviour
     {
         StopMap();
     }
+
+    public void SlowDownBounce(float duration)
+    {
+    // Wenn schon eine Coroutine läuft → abbrechen
+    if(slowDownCoroutine != null)
+        StopCoroutine(slowDownCoroutine);
+
+    // Neue Coroutine starten und speichern
+    slowDownCoroutine = StartCoroutine(SlowDownRoutine(duration));
+    }
+
+    private IEnumerator SlowDownRoutine(float duration)
+    {
+        float originalSpeed = speed;
+        float durationToSlow = 1f; // Zeit, um auf startSpeed zu kommen
+
+        float elapsed = 0f;
+        float fromSpeed = speed;
+        float slowedSpeed = speed*0.8f;
+        if (slowedSpeed < startSpeed)
+        {
+            slowedSpeed = startSpeed;
+        }
+
+        // Ease-Out runter auf startSpeed
+        while(elapsed < durationToSlow)
+        {
+            elapsed += Time.deltaTime;
+            float t = elapsed / durationToSlow;
+
+            // Ease-Out Kurve: schnelle Änderung am Anfang, langsamer am Ende
+            t = 1f - Mathf.Pow(1f - t, 3); // Cubic Ease-Out
+            speed = Mathf.Lerp(fromSpeed, slowedSpeed, t);
+
+            yield return null;
+            }
+
+            speed = slowedSpeed; // sicherstellen, dass wir exakt am Ziel sind
+
+            // Hold für holdDuration
+            yield return new WaitForSeconds(duration);
+
+            // Smooth wieder hoch auf originalSpeed (linear oder ebenfalls Ease-In)
+            elapsed = 0f;
+            fromSpeed = speed;
+            float durationToRecover = 1f;
+
+            while(elapsed < durationToRecover)
+            {
+                elapsed += Time.deltaTime;
+                float t = elapsed / durationToRecover;
+
+                // Optional: Ease-In Kurve für sanftes Hochfahren
+                t = Mathf.Pow(t, 2); // Quadratisch Ease-In
+                speed = Mathf.Lerp(fromSpeed, originalSpeed, t);
+
+                yield return null;
+            }
+
+            speed = originalSpeed; // sicherstellen
+            slowDownCoroutine = null;
+    }
+
     #endregion
 }

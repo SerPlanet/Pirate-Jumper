@@ -327,13 +327,14 @@ MonoBehaviour:
   itemAnimator: {fileID: 3680771445545712126}
   itemRenderer: {fileID: 8619891142920948803}
   kanonItem: {fileID: 6437422576537545015}
-  collider2D: {fileID: 3410369396992431658}
+  boxcollider2D: {fileID: 3410369396992431658}
   light2D: {fileID: 3427466005511660384}
   scriptableItems:
   - {fileID: 11400000, guid: 9c9af611b58535b42afaa28bf7ee34a5, type: 2}
   - {fileID: 11400000, guid: e44f5883faf3ab94fbac9295336e690c, type: 2}
   - {fileID: 11400000, guid: 0b8f84285f12a7747aad1d891610a6a9, type: 2}
   - {fileID: 11400000, guid: 313663ab86fc6984e93909d6614829ec, type: 2}
+  openChest: {fileID: 8300000, guid: dddd6cece985568419e283fd9fc7744e, type: 3}
 --- !u!61 &3410369396992431658
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -94,30 +94,30 @@ public class CharachterManager : MonoBehaviour
             if (randomNr < 70)
             {
                  randomNr = Random.Range(0,commonCharachters.Count);
-                UnlockCharacter(commonCharachters[randomNr].charachterName);
-                Debug.Log("common" + commonCharachters[randomNr].charachterName);
+                UnlockCharacter(commonCharachters[randomNr]);
+                //Debug.Log("common" + commonCharachters[randomNr].charachterName);
                 return (commonCharachters[randomNr].icon, Rarity.common); 
             }
             else if (randomNr < 90)
             {
                 randomNr = Random.Range(0,rareCharachters.Count);
-                UnlockCharacter(rareCharachters[randomNr].charachterName);
-                Debug.Log("rare");
+                UnlockCharacter(rareCharachters[randomNr]);
+                //Debug.Log("rare");
                  return (rareCharachters[randomNr].icon, Rarity.rare);
             }
             
             else if (randomNr < 99)
             {
                 randomNr = Random.Range(0,epicCharachters.Count);
-                UnlockCharacter(epicCharachters[randomNr].charachterName);
-                Debug.Log("Epic");
+                UnlockCharacter(epicCharachters[randomNr]);
+                //Debug.Log("Epic");
                 return (epicCharachters[randomNr].icon, Rarity.epic);
             }
             else
             {
                randomNr = Random.Range(0,legendaryCharachters.Count);
-                UnlockCharacter(legendaryCharachters[randomNr].charachterName);
-                Debug.Log("Legendary");
+                UnlockCharacter(legendaryCharachters[randomNr]);
+               // Debug.Log("Legendary");
                 return (legendaryCharachters[randomNr].icon, Rarity.legendary);
             }
         }
@@ -128,13 +128,35 @@ public class CharachterManager : MonoBehaviour
         
     }
 
-    public void UnlockCharacter(CharachterName name)
+    public void UnlockCharacter(ScriptableCharachter charachter)
     {
-        if (unlockedCharacters.Contains(name))
+        if (unlockedCharacters.Contains(charachter.charachterName))
+        {
+             switch (charachter.rarity)
+            {
+                case(Rarity.common):
+                GameManager.Instance.AddMoneyInLobby(500);
+                
+                break;
+                case(Rarity.rare):
+                GameManager.Instance.AddMoneyInLobby(1000);
+               
+                break;
+                case(Rarity.epic):
+                GameManager.Instance.AddMoneyInLobby(2000);
+               
+                break;
+                case(Rarity.legendary):
+                GameManager.Instance.AddMoneyInLobby(5000);
+                
+                break;
+            }
             return;
+        }
+            
 
-        unlockedCharacters.Add(name);
-        UIManager.Instance.SetNewUnlockedCharachter(GetPosOfCharachter(GetScriptableCharachterByName(name)));
+        unlockedCharacters.Add(charachter.charachterName);
+        UIManager.Instance.SetNewUnlockedCharachter(GetPosOfCharachter(GetScriptableCharachterByName(charachter.charachterName)));
         SaveManager.Instance.SaveUnlockedCharacters(new List<CharachterName>(unlockedCharacters));
     }
 

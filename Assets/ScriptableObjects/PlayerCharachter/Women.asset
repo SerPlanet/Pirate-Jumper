@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: Women
   m_EditorClassIdentifier: 
   charachterName: 4
-  animatorController: {fileID: 0}
-  icon: {fileID: 0}
+  animatorController: {fileID: 9100000, guid: bc022e1c353b81345a6e0881d5549c26, type: 2}
+  rarity: 0
+  icon: {fileID: -6486718900882178007, guid: 6e9ee0596703e314aa9164c7a1e96918, type: 3}
