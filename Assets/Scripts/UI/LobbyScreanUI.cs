@@ -32,6 +32,11 @@ public class LobbyScreanUI : MonoBehaviour
         highScoreTextField.text = highscore.ToString();
     }
 
+    public void DeactivateBackground()
+    {
+        CameraManager.Instance.TriggerBackgreoundSwitch();
+    }
+
     public void HideUI()
     {
         gameObject.SetActive(false);

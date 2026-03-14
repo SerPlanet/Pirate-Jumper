@@ -149,10 +149,15 @@ public class MapManager : MonoBehaviour
 
     private void MoveMapSegments()
     {
+
         foreach(MapPrefab mapPrefab in currentActiveMapPrefabs)
         {
-            Transform currentTransform = mapPrefab.GetTransform();
-            currentTransform.position = new Vector3(currentTransform.position.x - speed*Time.deltaTime, currentTransform.position.y);
+             Transform currentTransform = mapPrefab.GetTransform();
+
+            Vector3 pos = currentTransform.position;
+            pos.x -= speed * Time.deltaTime;
+
+            currentTransform.position = pos;
         }
         scoreChecker += speed*Time.deltaTime;
         if(scoreChecker >= 1)
@@ -228,12 +233,25 @@ public class MapManager : MonoBehaviour
 
     private void SetAllParametersToStandard()
     {
+         // Score & Movement
         currentScore = 0;
         scoreChecker = 0;
         movementWater = 0;
         movementSki = 0;
         movementPirateBayBackground = 0;
+
+        // Stoppe eventuell laufende Coroutine
+        if (slowDownCoroutine != null)
+        {
+            StopCoroutine(slowDownCoroutine);
+            slowDownCoroutine = null;
+        }
+
+        // Map Speed
         speed = startSpeed;
+        itemInUse = false; // auch Item zurücksetzen
+
+        // Parallax Hintergrund reset
         skyBackground.position = new Vector3(length, skyBackground.position.y, skyBackground.position.z);
         waterBackground.position = new Vector3(length, waterBackground.position.y, waterBackground.position.z);
         piratBayBackground.position = new Vector3(52, piratBayBackground.position.y, piratBayBackground.position.z);
@@ -386,6 +404,8 @@ public class MapManager : MonoBehaviour
             speed = originalSpeed; // sicherstellen
             slowDownCoroutine = null;
     }
+
+   
 
     #endregion
 }

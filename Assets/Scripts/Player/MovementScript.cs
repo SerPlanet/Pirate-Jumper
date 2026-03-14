@@ -113,8 +113,9 @@ public class MovementScript : MonoBehaviour
         }
         if (gamerIsRunning)
         {
-            if((transform.position.x < 3.5f || transform.position.y < -4 )&& !isDead)
+            if((transform.position.x < 3.5f || transform.position.y < -4 ) && !isDead)
         {
+            //
                 if (!heiligenscheinActive)
                 {
                      GameManager.Instance.GameEnds();
@@ -338,6 +339,10 @@ public class MovementScript : MonoBehaviour
     #endregion
     #region Items
 
+    public void CanonHit()
+    {
+        GameManager.Instance.GameEnds();
+    }
 
     private void DeaktivateItem()
     {
@@ -484,6 +489,18 @@ public class MovementScript : MonoBehaviour
         isDead = false;
         transform.position = startPos;
         animator.SetBool("isDead", isDead);
+
+        // -------------------------
+        // Jump/Physics Reset
+        rb.velocity = Vector2.zero;
+        isJumpPressed = false;
+        isJumping = false;
+        isGrounded = true;
+        checkForFalling = true;
+        jumpBufferCounter = 0f;
+        // Gravity / Multipliers bleiben gleich
+        // -------------------------
+
         GameManager.Instance.PlayerIsReady();
     }
     private void PlayerDies()

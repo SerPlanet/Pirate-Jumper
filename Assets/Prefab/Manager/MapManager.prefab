@@ -46,7 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startSpeed: 5
   maxSpeed: 17
-  acceleration: 0.1
+  acceleration: 0.05
   moveMap: 1
   mapHolderObj: {fileID: 6715463222440864475, guid: 3a83855419200f8499123a84dfafdcf7, type: 3}
   player: {fileID: 0}
@@ -62,7 +62,7 @@ MonoBehaviour:
   - {fileID: 5474317182444793544, guid: 774b337e538b19d40a8524ebb806df0c, type: 3}
   currentActiveMapPrefabs: []
   parallaxMultiplierWaterBackground: 0.2
-  parallaxMultiplierWaterVoreground: 0.8
+  parallaxMultiplierWaterVoreground: 1.1
   parallaxMultiplierSky: 0.05
   parallexMultiplierPirateBay: 0.4
   skyBackgroundObj: {fileID: 2657400480289729454, guid: bf8f2cc8ab7ac484f848d07860b558eb, type: 3}

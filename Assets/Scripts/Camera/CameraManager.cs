@@ -18,6 +18,9 @@ public class CameraManager : MonoBehaviour
     float shakeX;
     float shakeY;
 
+    private int referenceWidth = 320;   // logische Breite
+    private int referenceHeight = 180;  // logische Höhe
+
     [Header("Jump & Land Feel")]
     [SerializeField] float jumpUpOffset = 8f;   // weniger radikal beim Sprung
     [SerializeField] float landDownOffset = -12f; // sanfter Aufprall
@@ -26,6 +29,9 @@ public class CameraManager : MonoBehaviour
     [Header("Idle Bob")]
     [SerializeField] float idleBobAmount = 0.05f;
     [SerializeField] float idleBobSpeed = 2f;
+
+    [SerializeField] private GameObject testBackground;
+    private bool testBackgroundBool = true;
 
     private void Awake()
     {
@@ -106,5 +112,14 @@ public class CameraManager : MonoBehaviour
         shakeY = 0;
     }
 
+    #endregion
+
+    #region Testing
+
+    public void TriggerBackgreoundSwitch()
+    {
+        testBackgroundBool = !testBackgroundBool;
+        testBackground.SetActive(testBackgroundBool);
+    }
     #endregion
 }
