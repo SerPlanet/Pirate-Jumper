@@ -47,7 +47,7 @@ MonoBehaviour:
   allCharachters:
   - {fileID: 11400000, guid: 37f0797381b1fc944a3d04a351b8ad0d, type: 2}
   - {fileID: 11400000, guid: c7d24057e29e20e4b9496d6c4e86aea9, type: 2}
-  - {fileID: 11400000, guid: c2ed0326a11fa2548919fbea7fb42d7a, type: 2}
+  - {fileID: 11400000, guid: 35fd1276fa8bd9c4caf43a6ddb9a06b6, type: 2}
   - {fileID: 11400000, guid: a965c4b576d075740bba64652f23c346, type: 2}
   - {fileID: 11400000, guid: c7101d666c14248489c359a92a8e09d6, type: 2}
   - {fileID: 11400000, guid: 465143bc1ee76c4479d9da63830e0c6e, type: 2}

@@ -10,3 +10,8 @@ https://pixabay.com/de/sound-effects/haushalt-wood-door-slam-46791/ //Option2 Ch
 https://lost-soup.itch.io/woods-journey-ui-asset-pack //UI Idea
 https://pixabay.com/collections/interface-button-click-switch-22066007/ //UI Button And Pause
 https://pixabay.com/de/sound-effects/film-spezialeffekte-cannon-shot-326182/ //cannon shoot
+
+
+- CC0 Inhalte (Pixabay, Freesound) – keine Namensnennung nötig, dürfen kommerziell genutzt werden
+- Gekaufte Assets (itch.io) – kommerziell nutzbar, Autor verlinken
+- CC-BY Assets (OpenGameArt) – kommerziell nutzbar, Autor muss genannt werden

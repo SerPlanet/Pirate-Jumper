@@ -51,9 +51,16 @@ MonoBehaviour:
   chestOpenUIObj: {fileID: 7495013206885756481, guid: a005cd0cdd1f8ea47b26f15595a0720a, type: 3}
   charachterSelectUIObj: {fileID: 8347201298444283079, guid: a698244400383d2448647a1bb2bd57f3, type: 3}
   lobbyUIObj: {fileID: 2397152960981554977, guid: c58cf1a485269aa4788d4fa28286bc4d, type: 3}
+  creditsUIObj: {fileID: 1792415087351325520, guid: 74e3d79fd47eed14b8aabe8f7327b78d, type: 3}
+  optionsUIObj: {fileID: 3779610528786232688, guid: 465f13a8b8113af458cf70d14dd45b1e, type: 3}
+  LoadingStartObj: {fileID: 6883714634657390201, guid: 48a383ed409ffba469d0225b2e53b58f, type: 3}
   pauseUI: {fileID: 0}
   deathUI: {fileID: 0}
   gameUI: {fileID: 0}
   chestOpenUI: {fileID: 0}
   charachterSelectUI: {fileID: 0}
   lobbyUI: {fileID: 0}
+  creditUI: {fileID: 0}
+  optionsUI: {fileID: 0}
+  loadingStartUI: {fileID: 0}
+  timeTillEnd: 3

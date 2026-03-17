@@ -115,7 +115,7 @@ public class SaveManager : MonoBehaviour
     public CharachterName LoadCurrentCharacter()
     {
         if (!PlayerPrefs.HasKey(CurrentCharacterKey))
-            return CharachterName.Pirate; // Default
+            return CharachterName.Hook; // Default
 
         int value = PlayerPrefs.GetInt(CurrentCharacterKey);
         return (CharachterName)value;

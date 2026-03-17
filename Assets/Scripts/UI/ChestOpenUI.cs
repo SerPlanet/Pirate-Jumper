@@ -25,11 +25,11 @@ public class ChestOpenUI : MonoBehaviour
     public void ShowUI()
     {
         goBackButton.interactable = false;
-        (Sprite sprite, Rarity rarity) = CharachterManager.Instance.RoleNewCharachter();
+        (Sprite sprite, Rarity rarity, bool isUnlocked) = CharachterManager.Instance.RoleNewCharachter();
         if(sprite != null)
         {
             openChest.SetupInitialState();
-            openChest.SetUpChest(rarity, sprite);
+            openChest.SetUpChest(rarity, sprite, isUnlocked);
         }
         else
         {
@@ -48,6 +48,6 @@ public class ChestOpenUI : MonoBehaviour
     public void GoBack()
     {
         PlayButtonSound();
-        GameManager.Instance.GameLobby();
+        HideUI();
     }
 }

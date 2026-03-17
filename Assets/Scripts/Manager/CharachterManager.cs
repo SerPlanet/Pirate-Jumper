@@ -85,50 +85,51 @@ public class CharachterManager : MonoBehaviour
 
     #region Unlock System
 
-    public (Sprite,Rarity) RoleNewCharachter()
+    public (Sprite,Rarity,bool) RoleNewCharachter()
     {
+        bool isUnlocked = false;
         if (GameManager.Instance.OpenChestWithAmount(amountPerChest))
         {
             int randomNr = Random.Range(0,100);
 
             if (randomNr < 70)
             {
-                 randomNr = Random.Range(0,commonCharachters.Count);
-                UnlockCharacter(commonCharachters[randomNr]);
+                randomNr = Random.Range(0,commonCharachters.Count);
+                isUnlocked = UnlockCharacter(commonCharachters[randomNr]);
                 //Debug.Log("common" + commonCharachters[randomNr].charachterName);
-                return (commonCharachters[randomNr].icon, Rarity.common); 
+                return (commonCharachters[randomNr].icon, Rarity.common, isUnlocked); 
             }
             else if (randomNr < 90)
             {
                 randomNr = Random.Range(0,rareCharachters.Count);
-                UnlockCharacter(rareCharachters[randomNr]);
+                isUnlocked = UnlockCharacter(rareCharachters[randomNr]);
                 //Debug.Log("rare");
-                 return (rareCharachters[randomNr].icon, Rarity.rare);
+                 return (rareCharachters[randomNr].icon, Rarity.rare, isUnlocked);
             }
             
             else if (randomNr < 99)
             {
                 randomNr = Random.Range(0,epicCharachters.Count);
-                UnlockCharacter(epicCharachters[randomNr]);
+                isUnlocked = UnlockCharacter(epicCharachters[randomNr]);
                 //Debug.Log("Epic");
-                return (epicCharachters[randomNr].icon, Rarity.epic);
+                return (epicCharachters[randomNr].icon, Rarity.epic, isUnlocked);
             }
             else
             {
                randomNr = Random.Range(0,legendaryCharachters.Count);
-                UnlockCharacter(legendaryCharachters[randomNr]);
+               isUnlocked =  UnlockCharacter(legendaryCharachters[randomNr]);
                // Debug.Log("Legendary");
-                return (legendaryCharachters[randomNr].icon, Rarity.legendary);
+                return (legendaryCharachters[randomNr].icon, Rarity.legendary, isUnlocked);
             }
         }
         else
         {
-            return (null,Rarity.common);
+            return (null,Rarity.common, false);
         }
         
     }
 
-    public void UnlockCharacter(ScriptableCharachter charachter)
+    public bool UnlockCharacter(ScriptableCharachter charachter)
     {
         if (unlockedCharacters.Contains(charachter.charachterName))
         {
@@ -151,13 +152,14 @@ public class CharachterManager : MonoBehaviour
                 
                 break;
             }
-            return;
+            return true;
         }
             
 
         unlockedCharacters.Add(charachter.charachterName);
         UIManager.Instance.SetNewUnlockedCharachter(GetPosOfCharachter(GetScriptableCharachterByName(charachter.charachterName)));
         SaveManager.Instance.SaveUnlockedCharacters(new List<CharachterName>(unlockedCharacters));
+        return false;
     }
 
     public bool IsUnlocked(CharachterName name)
@@ -254,12 +256,15 @@ public class CharachterManager : MonoBehaviour
 
 public enum CharachterName
 {
-    Pirate,
-    Englisch,
+    Hook,
+    Englischman,
     Astronaut,
-    Animal,
-    Women,
-    GameDevCharachter
+    Flea,
+    Luna,
+    GameDevCharachter,
+    Skelette,
+    RedBeard,
+    
 }
 public enum Rarity
 {

@@ -53,6 +53,10 @@ public class MapManager : MonoBehaviour
 
     [Header ("Paralex Privat Var")]
     private float length, movementWater, movementSki, movementWaterVoreground, speed, movementPirateBayBackground;
+
+    // Pixel Perfect Scroll
+    private float scrollPosition;
+    [SerializeField] private float pixelsPerUnit = 16f;
      private void Awake()
     {
         if(Instance == null)
@@ -83,7 +87,7 @@ public class MapManager : MonoBehaviour
          GameManager.OnGameStateChange -= StartGame;
     }
     private void Update()
-    {
+    {   
        
         if (moveMap) //Var for dev reasons to stop scrolling
         {
@@ -99,9 +103,10 @@ public class MapManager : MonoBehaviour
             }
              
         }
-       
     }
 
+    #region MapMovement
+    #endregion
     //Helper Functions
 
     private void SpawnParalexBackground()
@@ -125,7 +130,7 @@ public class MapManager : MonoBehaviour
     private void SpawnMapPart(Vector3 spawnPosition)
     {
         int randomSelection = Random.Range(0, mapPrefabs.Count);
-        //int randomSelection = Random.Range(mapPrefabs.Count-1, mapPrefabs.Count-1);
+        //int randomSelection = 9;//Random.Range(mapPrefabs.Count-1, mapPrefabs.Count-1);
         if(randomSelection == prevNr)
         {
             randomSelection = (randomSelection+1)%mapPrefabs.Count;
@@ -150,6 +155,7 @@ public class MapManager : MonoBehaviour
     private void MoveMapSegments()
     {
 
+
         foreach(MapPrefab mapPrefab in currentActiveMapPrefabs)
         {
              Transform currentTransform = mapPrefab.GetTransform();
@@ -159,6 +165,7 @@ public class MapManager : MonoBehaviour
 
             currentTransform.position = pos;
         }
+        
         scoreChecker += speed*Time.deltaTime;
         if(scoreChecker >= 1)
         {

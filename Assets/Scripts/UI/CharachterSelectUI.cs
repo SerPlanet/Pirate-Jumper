@@ -10,7 +10,7 @@ public class CharachterSelectUI : MonoBehaviour
 
     [SerializeField] private ScrollSnap scrollSnapView;
 
-    private List<Image> charachterImage = new List<Image>();
+    private List<PageObjectCharachter> charachterImage = new List<PageObjectCharachter>();
 
     #region SetUpUI
 
@@ -21,23 +21,23 @@ public class CharachterSelectUI : MonoBehaviour
         foreach(ScriptableCharachter charachter in allCharachter)
         {
             GameObject currPage = Instantiate(pageObject, charachterPagesObj);
-            Image currImage = currPage.GetComponentInChildren<Image>();
-            charachterImage.Add(currImage);
-            currImage.sprite = charachter.icon;
+            PageObjectCharachter currPageScritpt = currPage.GetComponent<PageObjectCharachter>();
+            currPageScritpt.SetUpPageObject(charachter.icon, charachter.charachterName.ToString(), charachter.rarity);
+            charachterImage.Add(currPageScritpt);
             if (CharachterManager.Instance.IsUnlocked(charachter.charachterName))
             {
-                currImage.color = new Color(1,1,1);
+                currPageScritpt.IsUnlocked(true);
             }
             else
             {
-                currImage.color = new Color(0,0,0);
+                currPageScritpt.IsUnlocked(false);
             }
         }
     }
 
     public void UpdateCharachterUnlock(int i)
     {
-        charachterImage[i].color = new Color(1,1,1);
+        charachterImage[i].IsUnlocked(true);
     }
 
     #endregion
@@ -81,6 +81,6 @@ public class CharachterSelectUI : MonoBehaviour
     public void GoBack()
     {
         PlayButtonSound();
-        GameManager.Instance.GameLobby();
+        HideUI();
     }
 }

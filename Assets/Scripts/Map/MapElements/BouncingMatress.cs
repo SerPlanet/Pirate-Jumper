@@ -16,7 +16,8 @@ public class BouncingMatress : MonoBehaviour
         {
             AudioManager.Instance.PlayenvironmentAudi(bounceSound,1.1f,0.9f);
 
-            transform.DOScale(new Vector3(0.9f,0.9f,1f), 0.2f).SetLoops(2, LoopType.Yoyo);
+            transform.DOScale(new Vector3(0.6f,0.6f,1f), 0.2f).SetLoops(2, LoopType.Yoyo);
+            Debug.Log("MatUse");
 
             player.AddJumpForce(jumpForce);
 

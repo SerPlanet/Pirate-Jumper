@@ -13,7 +13,8 @@ public class SpawnManager : MonoBehaviour
     [SerializeField] private GameObject CanvasOpenApp;
 
     public bool test;
-    private bool gameManager, audioManager, charachterManager, MapManager, UIManager;
+    private bool gameManager, audioManager, charachterManager, MapManager, uIManager;
+    int rdyCount = 0;
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -45,19 +46,42 @@ public class SpawnManager : MonoBehaviour
             Instantiate(obj, managerHolder);
         }
     }
+    private void LoadVisuals()
+    {
+        if (uIManager)
+        {
+            UIManager.Instance.SetLoadingValue(rdyCount);
+        }
+    }
+    public void GameManagerRdy()
+    {
+        gameManager = true;
+        rdyCount++;
+        LoadVisuals();
+    }
+    public void UIManagerRdy(){
+        uIManager = true;rdyCount++;
+        LoadVisuals();
+    }
 
-    public void GameManagerRdy(){gameManager = true;}
-    public void UIManagerRdy(){UIManager = true;}
+    public void AudiManagerRdy(){
+        audioManager = true;rdyCount++;
+        LoadVisuals();
+    }
 
-    public void AudiManagerRdy(){audioManager = true;}
+    public void CharachterManagerRdy(){
+        charachterManager = true;rdyCount++;
+        LoadVisuals();
+    }
 
-    public void CharachterManagerRdy(){charachterManager = true;}
-
-    public void MapManagerRdy(){MapManager = true;}
+    public void MapManagerRdy(){
+        MapManager = true;rdyCount++;
+        LoadVisuals();
+    }
 
     private IEnumerator WaitTillUIAndGameManager()
     {
-        while(!(gameManager && UIManager && test))
+        while(!(gameManager && uIManager && test))
         {
             yield return null;
         }
@@ -65,11 +89,12 @@ public class SpawnManager : MonoBehaviour
     }
     private IEnumerator WaitTillEverythingIsSpawned()
     {
-        while(!(gameManager && audioManager && charachterManager && MapManager && UIManager))
+        while(!(gameManager && audioManager && charachterManager && MapManager && uIManager))
         {
             yield return null;
         }
-        GameManager.Instance.GameLobby();
+        //GameManager.Instance.GameLobby();
+        UIManager.Instance.GameCanContinue();
         DestroyEverthingUsless();
     }
 

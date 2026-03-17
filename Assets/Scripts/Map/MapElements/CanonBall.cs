@@ -4,7 +4,7 @@ public class CanonBall : MonoBehaviour
 {
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        GameManager.Instance.GetPlayerScript().CanonHit();
+        //GameManager.Instance.GetPlayerScript().CanonHit();
     }
 
 

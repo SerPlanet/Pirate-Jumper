@@ -1,8 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using Unity.VisualScripting;
+using System.Globalization;
 using UnityEngine.UI;
 
 public class LobbyScreanUI : MonoBehaviour
@@ -24,7 +22,10 @@ public class LobbyScreanUI : MonoBehaviour
 
     public void SetMoney(ulong money)
     {
-        moneyScoreTextField.text = money.ToString();
+       if (money < 1000)
+            moneyScoreTextField.text = money.ToString("D3"); // 005, 042, 999
+        else
+            moneyScoreTextField.text = money.ToString("N0", CultureInfo.GetCultureInfo("de-DE"));
     }
 
     public void SetHighScore(ulong highscore)
@@ -37,6 +38,15 @@ public class LobbyScreanUI : MonoBehaviour
         CameraManager.Instance.TriggerBackgreoundSwitch();
     }
 
+    public void ShowCredits()
+    {
+        UIManager.Instance.ShowCreditUI();
+    }
+
+    public void ShowOptionsUI()
+    {
+        UIManager.Instance.ShowOptiontUI();
+    }
     public void HideUI()
     {
         gameObject.SetActive(false);

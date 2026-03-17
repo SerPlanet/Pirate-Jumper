@@ -57,7 +57,6 @@ public class CoinMagnet : MonoBehaviour
 
         while (Vector2.Distance(transform.position, player.position) > 0.1f)
         {
-            Debug.Log(player);
             // Coin bewegt sich Richtung Spieler
             parentTransfrom.position = Vector2.MoveTowards(parentTransfrom.position, player.position, speed * Time.deltaTime);
             yield return null; // Warte auf nächsten Frame

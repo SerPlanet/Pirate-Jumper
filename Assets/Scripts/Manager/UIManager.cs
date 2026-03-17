@@ -14,6 +14,11 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject chestOpenUIObj;
     [SerializeField] private GameObject charachterSelectUIObj;
     [SerializeField] private GameObject lobbyUIObj;
+    [SerializeField] private GameObject creditsUIObj;
+
+    [SerializeField] private GameObject optionsUIObj;
+    [SerializeField] private GameObject LoadingStartObj;
+
 
     [Header("UI")]
     [SerializeField] private PauseMenuUI pauseUI;
@@ -22,8 +27,16 @@ public class UIManager : MonoBehaviour
     [SerializeField] private ChestOpenUI chestOpenUI;
     [SerializeField] private CharachterSelectUI charachterSelectUI;
     [SerializeField] private LobbyScreanUI lobbyUI;
+    [SerializeField] private CreditUI creditUI;
+    [SerializeField] private OptionsUI optionsUI;
+    [SerializeField] private LoadingStartUI loadingStartUI;
+
+    [Header("DeathUI")]
+    [SerializeField] private float timeTillEnd = 3f;
 
     private Transform canvasUI;
+
+    private Coroutine reviveCoroutine;
 
     private void Awake()
     {
@@ -51,14 +64,28 @@ public class UIManager : MonoBehaviour
     private void SpawnAllUI()
     {
         canvasUI = Instantiate(canvasUIObj).transform;
+        loadingStartUI = Instantiate(LoadingStartObj, canvasUI).GetComponent<LoadingStartUI>();
         lobbyUI = Instantiate(lobbyUIObj,canvasUI).GetComponent<LobbyScreanUI>();
         chestOpenUI = Instantiate(chestOpenUIObj,canvasUI).GetComponent<ChestOpenUI>();
         charachterSelectUI = Instantiate(charachterSelectUIObj,canvasUI).GetComponent<CharachterSelectUI>();
         gameUI = Instantiate(gameUIObj,canvasUI).GetComponent<InGameUI>();
         pauseUI = Instantiate(pauseUIObj,canvasUI).GetComponent<PauseMenuUI>();
         deathUI = Instantiate(deathUIObj,canvasUI).GetComponent<DeathScreanUI>();
+        creditUI = Instantiate(creditsUIObj,canvasUI).GetComponent<CreditUI>();
+        optionsUI = Instantiate(optionsUIObj, canvasUI).GetComponent<OptionsUI>();
        
     }
+    #region LoadingUI
+    public void SetLoadingValue(int rdyCount)
+    {
+        loadingStartUI.SetLoadingSlider(rdyCount);
+    }
+
+    public void GameCanContinue()
+    {
+        loadingStartUI.CanContinue();
+    }
+    #endregion
 
     #region LobbyUI
 
@@ -97,6 +124,36 @@ public class UIManager : MonoBehaviour
 
     #region DeathUI
 
+    public void StartReviveUIAfterDeath()
+    {
+        gameUI.ShowAfterDeathReviveOption();
+        if(reviveCoroutine == null)
+        {
+             reviveCoroutine = StartCoroutine(WaitTimeTillReviveEnds());
+        }
+      
+    }
+
+    public void PlayerRevived()
+    {
+        StopCoroutine(reviveCoroutine);
+        reviveCoroutine = null;
+    }
+    private IEnumerator WaitTimeTillReviveEnds()
+    {
+        float currTime = 0;
+
+        while(currTime < timeTillEnd)
+        {
+            currTime += Time.deltaTime;
+            gameUI.SetTimerOfClock(currTime/timeTillEnd);
+            yield return null;
+        }
+        gameUI.HideAfterDeathReviveOption();
+        GameManager.Instance.GameEnds();
+       //StopCoroutine(reviveCoroutine);
+       reviveCoroutine = null;
+    }
     public void SetUpDeathScreanUI(ulong currentMoney, ulong currentScore, ulong highscore)
     {
         SetDeathScreanMoney(currentMoney);
@@ -167,6 +224,26 @@ public class UIManager : MonoBehaviour
         lobbyUI.ShowUI();
     }
 
+    public void ShowCreditUI()
+    {
+        creditUI.ShowUI();
+    }
+
+    private void HideCreditUI()
+    {
+        creditUI.HideUI();
+    }
+
+    public void ShowOptiontUI()
+    {
+        optionsUI.ShowUI();
+    }
+
+    private void HideOptionUI()
+    {
+        optionsUI.HideUI();
+    }
+
     private void HideLobbyUI(){lobbyUI.HideUI();}
 
     private void HideAll()
@@ -177,6 +254,8 @@ public class UIManager : MonoBehaviour
         HideLobbyUI();
         HideCharachterSelectUI();
         HideChestOpenUI();
+        HideCreditUI();
+        HideOptionUI();
     }
 
     private void ResetAll()

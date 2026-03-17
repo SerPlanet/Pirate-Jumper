@@ -6,7 +6,7 @@ using UnityEngine.Tilemaps;
 
 public class MapPrefab : MonoBehaviour
 {
-    [SerializeField] private Transform startPosition;
+    [SerializeField] private Vector2 startPosition;
     [SerializeField] private Transform endPosition;
 
     [SerializeField] private Tilemap tilemap;
@@ -20,6 +20,16 @@ public class MapPrefab : MonoBehaviour
         y = endPosition.position.y;
         
         return new Vector3(x,y);
+    }
+
+    public Vector2 GetStartPos()
+    {
+        return startPosition;
+    }
+
+    public void SetStartPos(Vector2 startPos)
+    {
+        startPosition = startPos;
     }
 
     public Transform GetTransform()

@@ -55,7 +55,7 @@ public class MovementScript : MonoBehaviour
     private float timeTillItemRunsout = 15f;
     private float currentTime;
 
-    private bool itemTimeActive, heiligenscheinActive;
+    private bool itemTimeActive, heiligenscheinActive, canRevieve;
 
 
 
@@ -114,21 +114,23 @@ public class MovementScript : MonoBehaviour
         if (gamerIsRunning)
         {
             if((transform.position.x < 3.5f || transform.position.y < -4 ) && !isDead)
-        {
-            //
-                if (!heiligenscheinActive)
-                {
-                     GameManager.Instance.GameEnds();
-                }
-                else
-                {
-                    PlayerDies();
-                    MapManager.Instance.UseHeiligenschein();
-                }
-           
-           
-            //transform.position = new Vector3 (transform.position.x, transform.position.y-1);
-        }
+            {
+                /*
+                    if (!heiligenscheinActive)
+                    {
+                        //PlayerDies();
+                        MapManager.Instance.UseHeiligenschein();
+                        GameManager.Instance.GameEnds();
+                    }
+                    else
+                    {
+                        PlayerDies();
+                        MapManager.Instance.UseHeiligenschein();
+                    }*/
+            
+                PlayerDies();
+                MapManager.Instance.UseHeiligenschein();
+            }
         }
         
     }
@@ -333,7 +335,6 @@ public class MovementScript : MonoBehaviour
 
     public void ChangeCharachter(RuntimeAnimatorController controller)
     {
-        Debug.Log("CharachterViusualChanged" + controller);
         animator.runtimeAnimatorController = controller;
     }
     #endregion
@@ -341,7 +342,8 @@ public class MovementScript : MonoBehaviour
 
     public void CanonHit()
     {
-        GameManager.Instance.GameEnds();
+        PlayerDies();
+        MapManager.Instance.UseHeiligenschein();
     }
 
     private void DeaktivateItem()
@@ -392,7 +394,7 @@ public class MovementScript : MonoBehaviour
         currentTime = 0;
     }
 
-    private void RevivePlayer()
+    public void RevivePlayer()
     {
         StartCoroutine( MoveToPoint(new Vector3(4,4,0), 2));
         gamerIsRunning = false;
@@ -487,6 +489,7 @@ public class MovementScript : MonoBehaviour
         gamerIsRunning = false;
         itemSlot.enabled = false;
         isDead = false;
+        canRevieve = true;
         transform.position = startPos;
         animator.SetBool("isDead", isDead);
 
@@ -515,7 +518,11 @@ public class MovementScript : MonoBehaviour
         animator.SetBool("Walking", false);
         animator.SetBool("isJumping", false);
         animator.SetBool("isGrounded",true);
-        rb.simulated = false; 
+        rb.simulated = false;  
+    }
+
+    public void OnCharachterDied()
+    {
         if (heiligenscheinActive)
         {
             RevivePlayer();
@@ -523,7 +530,22 @@ public class MovementScript : MonoBehaviour
         else
         {
              DeaktivateItem();
+            //ShowOption to revive once per Round
+            if (canRevieve)
+            {
+                OptionAfterDeath();
+            }
+            else
+            {
+                GameManager.Instance.GameEnds();
+            }
         }
+    }
+
+    private void OptionAfterDeath()
+    {
+        canRevieve = false;
+        UIManager.Instance.StartReviveUIAfterDeath();
     }
     private void GameStateChanged(GameStates gameState)
     {
@@ -532,7 +554,7 @@ public class MovementScript : MonoBehaviour
             StartCoroutine(MoveToPoint(new Vector3(4,0.01f), 1));
             break;
             case(GameStates.GameEnds):
-            PlayerDies();
+            //PlayerDies();
             break;
             case(GameStates.GameRunning):
             UnPausePlayer();

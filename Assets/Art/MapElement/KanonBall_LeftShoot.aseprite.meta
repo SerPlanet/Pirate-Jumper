@@ -124,15 +124,15 @@ ScriptedImporter:
   animatedSpriteImportData:
   - name: KanonBall_LeftShoot
     originalName: 
-    pivot: {x: 0.5, y: -0.3}
+    pivot: {x: 0.5, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 10
-      height: 10
+      width: 16
+      height: 16
     spriteID: 0f031218135c5404ea48073dcf9666d8
     spriteBone: []
     spriteOutline: []
@@ -160,10 +160,10 @@ ScriptedImporter:
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
-        x: 3
-        y: 3
-        width: 10
-        height: 10
+        x: 0
+        y: 0
+        width: 16
+        height: 16
       spriteId: 0f031218135c5404ea48073dcf9666d8
     linkedCells: []
     parentIndex: -1

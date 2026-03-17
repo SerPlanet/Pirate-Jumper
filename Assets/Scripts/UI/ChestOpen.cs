@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using DG.Tweening;
+using TMPro;
 
 public class ChestOpen : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
@@ -24,6 +25,8 @@ public class ChestOpen : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 
     [SerializeField] private AudioClip openRevealSound;
 
+    [SerializeField] private TextMeshProUGUI doubleCollectTxt;
+
     [Header("Settings")]
     [SerializeField] private float dropHeight = 800f;
     [SerializeField] private float pressScale = 0.9f;
@@ -42,6 +45,8 @@ public class ChestOpen : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 
     Vector2 startPosItem;
 
+    bool isDouble;
+
     private void Start()
     {
         startPosItem = item.anchoredPosition;
@@ -49,16 +54,43 @@ public class ChestOpen : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         sparkelEffekt2.Hide();
     }
 
-    public void SetUpChest(Rarity rarity, Sprite charachterIcon)
+    public void SetUpChest(Rarity rarity, Sprite charachterIcon, bool isDouble)
     {
         itemImage.sprite = charachterIcon;
         this.rarity = rarity;
-       
+        this.isDouble = isDouble;
+
+        if (isDouble)
+        {
+            switch (rarity)
+            {
+                case(Rarity.common):
+                 doubleCollectTxt.text = "500";
+                break;
+                case(Rarity.rare):
+                 doubleCollectTxt.text = "1000";
+                break;
+                case(Rarity.epic):
+                 doubleCollectTxt.text = "2000";
+                break;
+                case(Rarity.legendary):
+                 doubleCollectTxt.text = "5000";
+                break;
+            }
+           
+            doubleCollectTxt.enabled = false;
+        }
+        else
+        {
+            doubleCollectTxt.text = "";
+            doubleCollectTxt.enabled = false;
+        }
     }
     public void SetupInitialState()
     {
         chestOpened = false;
         canPress = false;
+        itemImage.color = Color.white;
         item.anchoredPosition = startPosItem;
         chestLidImage.sprite = closedChestSprite;
         item.localScale = Vector3.zero;
@@ -75,7 +107,6 @@ public class ChestOpen : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         glow.color = new Color(currentGlowCollor.r, currentGlowCollor.g, currentGlowCollor.b,0);
 
         flashImage.color = new Color(1,1,1,0);
-        Vector2 startPos = chestRoot.anchoredPosition + new Vector2(0, dropHeight);
     }
 
     public void DropChest()
@@ -83,7 +114,7 @@ public class ChestOpen : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         Vector2 startPos = chestRoot.anchoredPosition + new Vector2(0, dropHeight);
         chestRoot.anchoredPosition = startPos;
 
-        chestRoot.DOAnchorPosY(0, 0.6f)
+        chestRoot.DOAnchorPosY(-170, 0.6f)
             .SetEase(Ease.OutBounce)
             .OnComplete(() =>
             {
@@ -193,8 +224,39 @@ public class ChestOpen : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         seq.Append(
             item.DOAnchorPosY(startPos.y+270, 0.1f).SetEase(Ease.OutQuad)
         );
-        goBackRaycast.raycastTarget = true;
+        seq.OnComplete(() =>
+        {
+            if (isDouble)
+            {
+                PlayDoubleReward();
+            }
+            else
+            {
+                goBackRaycast.raycastTarget = true;
+            }
+        });
         
+        
+    }
+
+    void PlayDoubleReward()
+    {
+        // Character ausgrauen
+        itemImage.DOColor(Color.gray, 0.3f);
+
+        // Geld Text einblenden
+        doubleCollectTxt.alpha = 0;
+        doubleCollectTxt.enabled = true;
+
+        doubleCollectTxt
+            .DOFade(1f, 0.4f)
+            .From(0f);
+
+        doubleCollectTxt.transform
+            .DOScale(1.3f, 0.25f)
+            .From(0.5f)
+            .SetEase(Ease.OutBack);
+        goBackRaycast.raycastTarget = true;
     }
 
     void PlayFlash()

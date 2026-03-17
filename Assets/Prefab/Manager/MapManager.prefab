@@ -60,6 +60,7 @@ MonoBehaviour:
   - {fileID: 5474317182444793544, guid: 93be0d8d69da21f4e8434b727e80f22f, type: 3}
   - {fileID: 5474317182444793544, guid: 1597884364177564bb1297c0174b1bf7, type: 3}
   - {fileID: 5474317182444793544, guid: 774b337e538b19d40a8524ebb806df0c, type: 3}
+  - {fileID: 5474317182444793544, guid: 9a5bb600cb8471045a3d822324cbbf71, type: 3}
   currentActiveMapPrefabs: []
   parallaxMultiplierWaterBackground: 0.2
   parallaxMultiplierWaterVoreground: 1.1
@@ -69,3 +70,4 @@ MonoBehaviour:
   waterBackgroundObj: {fileID: 2288029555988444209, guid: 662027a1e4dedb44ea88c08cd6cb3016, type: 3}
   waterVoregroundObj: {fileID: 5972382817893256238, guid: 05f155ad5de5c70438b4dfb3270eeb5c, type: 3}
   piratBayBackgroundObj: {fileID: 6719478705387651235, guid: b7b77a9ea187fde4587f8de254f42b9c, type: 3}
+  pixelsPerUnit: 16

@@ -37,7 +37,7 @@ public class InputManager : MonoBehaviour
 
     public void JumpPressed(InputAction.CallbackContext context)
     {
-        //OnJumpPressed?.Invoke();
+        OnJumpPressed?.Invoke();
     }
 
     public void JumpPressed()

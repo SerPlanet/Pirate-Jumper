@@ -51,7 +51,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d5dfbe139c330d4f9d41744b65da219, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startPosition: {fileID: 3372890639253818298}
+  startPosition: {x: 0, y: 0}
   endPosition: {fileID: 1255344387067757469}
   tilemap: {fileID: 0}
 --- !u!1 &2787502403704344164

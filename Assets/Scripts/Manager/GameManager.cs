@@ -30,6 +30,9 @@ public class GameManager : MonoBehaviour
     private bool gameManagerReady;
 
     private bool isDoubleXP, isMagnetAktiv;
+
+    float deltaTime = 0.0f;
+
      private void Awake()
     {
         if(Instance == null)
@@ -56,9 +59,39 @@ public class GameManager : MonoBehaviour
         Screen.autorotateToLandscapeLeft = true;
         Screen.autorotateToLandscapeRight = true;
         Screen.orientation = ScreenOrientation.AutoRotation;
+        #if UNITY_IOS || UNITY_ANDROID
+        Application.targetFrameRate = 60;
+// FPS-Code hier
+        #endif
+        
+
 
         OpenApp();
     }
+    #region FPSAnzeige
+    /*
+     void Update()
+    {
+        // Glättet die FPS-Anzeige über mehrere Frames
+        deltaTime += (Time.unscaledDeltaTime - deltaTime) * 0.1f;
+    }
+
+     void OnGUI()
+    {
+        int w = Screen.width, h = Screen.height;
+
+        GUIStyle style = new GUIStyle();
+
+        Rect rect = new Rect(200, 10, w, h * 2 / 100);
+        style.alignment = TextAnchor.UpperLeft;
+        style.fontSize = h * 2 / 50;
+        style.normal.textColor = Color.yellow;
+
+        float fps = 1.0f / deltaTime;
+        string text = string.Format("{0:0.} FPS", fps);
+        GUI.Label(rect, text, style);
+    }*/
+    #endregion
     #region Player
 
     public MovementScript GetPlayerScript(){return player;}
@@ -86,7 +119,7 @@ public class GameManager : MonoBehaviour
 
     public bool OpenChestWithAmount(ulong amountPerChest)
     {
-        if(amountPerChest < money)
+        if(amountPerChest <= money)
         {
             AudioManager.Instance.PlayUIAudi(moneySound,1f,0.9f);
             money -= amountPerChest;
@@ -96,6 +129,21 @@ public class GameManager : MonoBehaviour
         else
         {
              return false;
+        }
+    }
+
+    public bool PurchaseRevive(ulong amount)
+    {
+        if(amount <= money)
+        {
+            AudioManager.Instance.PlayUIAudi(moneySound,1f,0.9f);
+            money -= amount;
+            SaveManager.Instance.SaveMoney(money);
+            return true;
+        }
+        else
+        {
+            return false;
         }
     }
 

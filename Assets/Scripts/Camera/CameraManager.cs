@@ -7,7 +7,10 @@ public class CameraManager : MonoBehaviour
 
     [SerializeField] private Transform cameraTransform;
 
-    [SerializeField] int pixelsPerUnit = 100;
+    [SerializeField] int pixelsPerUnit = 32;
+
+    [SerializeField]private int referenceWidth = 640;   // logische Breite
+    [SerializeField]private int referenceHeight = 360;  // logische Höhe
     float pixelSize;
 
     Vector3 startPos;
@@ -18,8 +21,7 @@ public class CameraManager : MonoBehaviour
     float shakeX;
     float shakeY;
 
-    private int referenceWidth = 320;   // logische Breite
-    private int referenceHeight = 180;  // logische Höhe
+    
 
     [Header("Jump & Land Feel")]
     [SerializeField] float jumpUpOffset = 8f;   // weniger radikal beim Sprung
@@ -119,7 +121,7 @@ public class CameraManager : MonoBehaviour
     public void TriggerBackgreoundSwitch()
     {
         testBackgroundBool = !testBackgroundBool;
-        testBackground.SetActive(testBackgroundBool);
+        //testBackground.SetActive(testBackgroundBool);
     }
     #endregion
 }
